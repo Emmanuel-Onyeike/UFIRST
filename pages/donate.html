@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | U-FIRST</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/donate.css">
+</head>
+<body>
+    <div class="donate-page">
+        <!-- Navigation -->
+        <a href="/index.html" class="back-link">← RETURN TO CORE</a>
+        
+        <!-- Mission Header -->
+        <section class="mission-hero">
+            <h2>Mission Directive</h2>
+            <p>HELP US TO BRING HOPE FIRST TO THOSE IN NEED.</p>
+        </section>
+
+        <!-- Account Data Container -->
+        <section class="bank-grid">
+            <div class="bank-card">
+                <h3>Financial Credentials</h3>
+                <p><strong>NAME:</strong> U-FIRST COMMUNITY INITIATIVE</p>
+                <p><strong>NUMBER:</strong> 000-123-456-789</p>
+            </div>
+            <div class="bank-card">
+                <h3>Institution Details</h3>
+                <p><strong>BANK:</strong> TECH NXXT FINANCIAL SERVICES</p>
+                
+            </div>
+        </section>
+
+        <!-- Receipt Upload Trigger -->
+        <div class="upload-section" id="uploadTrigger">
+            <h2 style="color: var(--accent-green)">INITIATE RECEIPT UPLOAD</h2>
+            <p>Provide transaction evidence for verification.</p>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <div class="success-check">✔ CONFIRMED</div>
+            <p>Upload successful. Redirecting to verification channel...</p>
+            <a href="https://wa.me/234XXXXXXXXXX" id="waLink">CONNECT VIA WHATSAPP</a>
+            <p id="timer" style="margin-top: 20px; font-size: 0.7rem; color: #64748b;">AUTO-ROUTING IN 4s...</p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const fileInput = document.getElementById('fileInput');
+        const uploadTrigger = document.getElementById('uploadTrigger');
+
+        uploadTrigger.onclick = () => fileInput.click();
+        
+        fileInput.onchange = () => {
+            modal.style.display = 'flex';
+            let timeLeft = 4;
+            const timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = `AUTO-ROUTING IN ${timeLeft}s...`;
+                if(timeLeft <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://wa.me/234XXXXXXXXXX';
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Secure Channel</title>
+    <link rel="stylesheet" href="/styles/contact.css">
+</head>
+<body>
+    <div class="page-container">
+        <a href="/index.html" style="color: #475569; font-size: 0.7rem;">← RETURN TO HOME</a>
+        <h1>COMMUNICATION CHANNEL</h1>
+        <form id="contactForm">
+            <input type="text" placeholder="NAME" required>
+            <input type="email" placeholder="EMAIL" required>
+            <input type="text" placeholder="SUBJECT" required>
+            <textarea placeholder="MESSAGE" rows="5"></textarea>
+            <button type="submit" id="submitBtn">SEND</button>
+        </form>
+    </div>
+
+    <div id="toast">SENT SUCCESSFUL</div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <h3 style="color:var(--accent-green)">CONNECTION ESTABLISHED</h3>
+            <p style="font-size: 0.8rem; margin-bottom: 2rem;">CHOOSE YOUR COMMUNICATION :</p>
+            <button class="modal-btn" onclick="window.location.href='https://wa.me/yournumber'">CHAT VIA WHATSAPP</button>
+            <button class="modal-btn" onclick="window.location.href='mailto:support@u-first.org'">CHAT VIA EMAIL</button>
+            <p id="timer" style="margin-top:20px; font-size: 0.6rem; color: #475569;">AUTO-ROUTING IN 6s...</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const btn = document.getElementById('submitBtn');
+        const modal = document.getElementById('modal');
+        const timerText = document.getElementById('timer');
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            btn.innerText = "UPLOADING DATA..."; // 5s Loading state
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('toast').classList.add('show');
+                setTimeout(() => {
+                    modal.style.display = 'flex';
+                    let timeLeft = 6;
+                    const timer = setInterval(() => {
+                        timeLeft--;
+                        timerText.innerText = `AUTO-ROUTING IN ${timeLeft}s...`;
+                        if(timeLeft <= 0) {
+                            clearInterval(timer);
+                            window.location.href = 'https://wa.me/yournumber';
+                        }
+                    }, 1000);
+                }, 2000);
+            }, 5000);
+        };
+    </script>
+</body>
+</html>

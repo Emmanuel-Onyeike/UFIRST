@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Nxxt | NGO Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="text-white min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="nav-blur sticky top-0 z-50 px-6 py-4 flex items-center justify-between">
+       <a href="/" class="logo-container">
+        <span class="text-3xl logo-u">U</span>
+        <span class="text-lg logo-first">FIRST</span>
+    </a>
+
+     <!-- Enhanced Desktop Nav -->
+<div class="hidden md:flex space-x-10 items-center">
+    <a href="pages/about.html" class="nav-link">About</a>
+   
+    <a href="pages/ceo.html" class="nav-link">Vision</a>
+    <a href="pages/partners.html" class="nav-link">Partners</a>
+    <a href="pages/contact.html" class="nav-link">Contact</a>
+    
+    <!-- Donate Button -->
+    <a href="pages/donate.html" class="btn-nav-donate hover:shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+        Donate
+    </a>
+</div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-green-400 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Mobile Dropdown -->
+ <!-- Enhanced Mobile Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 p-8 flex flex-col">
+    <a href="pages/about.html" class="mobile-nav-link">About</a>
+   
+    <a href="pages/ceo.html" class="mobile-nav-link">Vision</a>
+    <a href="pages/partners.html" class="mobile-nav-link">Partners</a>
+    <a href="pages/contact.html" class="mobile-nav-link">Contact</a>
+    
+    <!-- Mobile Donate Button -->
+    <a href="pages/donate.html" class="btn-extra mt-6 text-center py-4 font-bold uppercase tracking-[0.2em]">
+        Donate
+    </a>
+</div>
+
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 py-24 flex flex-col items-start relative">
+    
+        <!-- Hero Section -->
+        <div class="status-badge mb-8">
+            <span class="status-dot"></span>
+            Mission 2026: Bridging the Divide
+        </div>
+        
+        <h1 class="hero-headline font-black mb-8">
+            BUILDING <br>
+            <span class="text-green-400 glow-text equity-text">DIGITAL EQUITY.</span>
+        </h1>
+        
+        <div class="flex flex-col md:flex-row gap-8 items-start md:items-center mb-24">
+            <p class="text-slate-400 text-lg md:text-xl max-w-lg border-l-4 border-green-500 pl-6 leading-relaxed">
+                We empower communities by providing the resources, education, and tools necessary to thrive in an interconnected world. 
+                <span class="block mt-2 text-white font-semibold">Your support builds the foundation for tomorrow.</span>
+            </p>
+            
+            <a href="pages/donate.html" class="btn-extra px-12 py-5 font-black uppercase tracking-[0.2em] whitespace-nowrap">
+                DONATE
+            </a>
+        </div>
+    
+        <!-- Impact Section: Flexbox Vertical Stack -->
+       <!-- Impact Section: Horizontal Flex Stack -->
+<section class="w-full flex flex-col items-center py-16">
+    <div class="mb-12 flex flex-col items-center">
+        <h2 class="text-3xl font-bold text-white mb-2">BY THE NUMBERS</h2>
+        <div class="h-1 w-20 bg-green-500"></div>
+    </div>
+
+    <!-- This will now display Left - Middle - Right -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-number">3.2K+</span>
+            <span class="stat-label">People Empowered</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Communities</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">450</span>
+            <span class="stat-label">Mentorship Sessions</span>
+        </div>
+    </div>
+</section>
+        </section>
+        <!-- Strategic Pillars Section -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="mb-16">
+        <h2 class="text-3xl font-bold text-white tracking-wider">STRATEGIC DEPLOYMENT</h2>
+        <div class="h-1 w-20 bg-green-500 mt-2"></div>
+    </div>
+
+    <div class="pillars-grid flex-col md:flex-row">
+        
+        <!-- Infrastructure -->
+        <div class="pillar-card group">
+            <i class="fas fa-server pillar-icon"></i>
+            <span class="pillar-title">Infrastructure</span>
+            <p class="pillar-desc">Deploying robust, scalable digital systems to underserved areas to ensure seamless connectivity and reliable access.</p>
+        </div>
+        
+        <!-- Education -->
+        <div class="pillar-card group">
+            <i class="fas fa-laptop-code pillar-icon"></i>
+            <span class="pillar-title">Education</span>
+            <p class="pillar-desc">Providing structured mentorship and technical curriculum to bridge the digital divide and prepare future innovators.</p>
+        </div>
+
+        <!-- Community/Support -->
+    <!-- Empowerment Pillar with Icon -->
+<div class="pillar-card group">
+    <i class="fas fa-handshake pillar-icon"></i>
+    <span class="pillar-title">Empowerment</span>
+    <p class="pillar-desc">Creating sustainable pathways for entrepreneurship and long-term economic independence through community-led support.</p>
+</div>
+
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="vision-panel">
+        <h3 class="text-green-500 font-bold uppercase tracking-[0.3em] text-xs mb-6">Our Vision</h3>
+        <p class="vision-text">
+            "To engineer a future where access to technology is not a privilege, but a fundamental foundation for human progress across every community."
+        </p>
+    </div>
+</section>
+
+    </main>
+    <footer>
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-column">
+                <div class="text-white font-black text-2xl mb-4">U<span class="text-green-500">|</span>FIRST</div>
+                <p class="text-slate-500 text-sm leading-relaxed">Engineering digital equity for a connected world.</p>
+            </div>
+    
+            <!-- Links Columns -->
+            <div class="footer-column">
+                <h4>Platform</h4>
+             
+                <a href="/pages/Database.html" class="footer-link">Database</a>
+                <a href="/pages/Documentation.html" class="footer-link">Documentation</a>
+            </div>
+    
+            <div class="footer-column">
+                <h4>Organization</h4>
+                <a href="/pages/about.html" class="footer-link">About</a>
+                <a href="/pages/transparency.html" class="footer-link">Transparency</a>
+              
+            </div>
+        </div>
+    
+        <!-- Metadata Footer -->
+        <div class="footer-bottom max-w-7xl mx-auto px-6">
+            <div>&copy; 2026 U-FIRST NGO. ALL RIGHTS RESERVED.</div>
+            <div class="flex items-center gap-4">
+                <span>SYSTEM STATUS: OPERATIONAL</span>
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span>POWERED BY TECH NXXT COMPANY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

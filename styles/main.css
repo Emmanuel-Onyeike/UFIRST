@@ -1,0 +1,385 @@
+/* Base Industrial Grid */
+body {
+    background-color: #020617;
+    background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
+    background-size: 40px 40px;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Futuristic Text Glow */
+.glow-text {
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+/* High-End Button */
+.btn-extra {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+}
+
+.btn-extra:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+    background: white;
+    color: #020617;
+}
+
+/* Nav Blur */
+.nav-blur {
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1e293b;
+}
+
+/* Glass panel refinement */
+.glass-panel {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    letter-spacing: -2px;
+    text-decoration: none;
+}
+
+.logo-u {
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.logo-first {
+    color: #22c55e;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    border-left: 2px solid #22c55e;
+    padding-left: 8px;
+    line-height: 1;
+}
+
+/* Enhanced Navigation Links */
+.nav-link {
+    color: #94a3b8; /* Slate 400 */
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #4ade80; /* Green 400 */
+}
+
+/* The "Active" Underline Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #22c55e;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Tactical Donate Button */
+.btn-nav-donate {
+    background: transparent;
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #4ade80;
+    padding: 8px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-nav-donate:hover {
+    background: #22c55e;
+    color: #020617;
+    border-color: #22c55e;
+}
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+#mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Mobile Nav Links */
+.mobile-nav-link {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #22c55e;
+}
+/* Tactical Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.05);
+    color: #4ade80;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+}
+
+/* Pulsing Dot */
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+/* Hero Headline Polish */
+.hero-headline {
+    font-size: clamp(3rem, 10vw, 8rem); /* Fluid typography */
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+}
+
+/* Add a subtle underline for the "Digital Equity" part */
+.equity-text {
+    position: relative;
+    display: inline-block;
+}
+
+.equity-text::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(74, 222, 128, 0.2);
+    z-index: -1;
+}
+/* Impact Stats Container - Optimized Flexbox */
+/* Impact Stats Container - Horizontal Flex */
+.stats-grid {
+    display: flex;
+    flex-direction: row;        /* Aligns items horizontally */
+    justify-content: center;    /* Keeps them centered */
+    align-items: center;        /* Aligns them vertically */
+    gap: 2rem;                  /* Space between left, middle, and right */
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stat-card {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem 2rem;
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-top: 2px solid rgba(34, 197, 94, 0.2); /* "Top light" engineering detail */
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+    transform: translateY(-10px);
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+/* Enhancing the inner text labels for clarity */
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: #94a3b8;
+    font-weight: 600;
+}
+/* Strategic Pillars Section */
+.pillars-grid {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.pillar-card {
+    flex: 1;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+/* Enhanced Icon Styling for Pillars */
+.pillar-icon {
+    display: block;
+    color: #4ade80; /* Green 400 */
+    font-size: 2.5rem; /* Larger and bolder */
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.3));
+}
+
+.pillar-card:hover .pillar-icon {
+    transform: scale(1.1);
+    color: #ffffff;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
+
+.pillar-title {
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.pillar-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+/* Vision Section */
+.vision-panel {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 4rem;
+    position: relative;
+    text-align: center;
+    border-left: 4px solid #22c55e; /* Industrial indicator */
+}
+
+.vision-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.4;
+    color: #f8fafc;
+    font-weight: 300;
+    font-style: italic;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* Enhanced Footer System */
+footer {
+    background: #0a0f19;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 5rem 2rem 2rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-link {
+    display: block;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #22c55e;
+}
+
+.footer-bottom {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #475569;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}

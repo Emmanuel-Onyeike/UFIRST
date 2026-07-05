@@ -1,0 +1,25 @@
+:root {
+    --bg-dark: #0a0f19;
+    --accent-green: #22c55e;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body { background: var(--bg-dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+.page-container { max-width: 600px; margin: 6rem auto; padding: 2rem; border: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.3); }
+
+/* Form Aesthetics */
+h1 { font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem; border-bottom: 2px solid var(--accent-green); display: inline-block; }
+input, textarea { width: 100%; background: #05080f; border: 1px solid var(--border-color); padding: 1rem; color: white; margin-bottom: 1.5rem; outline: none; }
+input:focus, textarea:focus { border-color: var(--accent-green); }
+
+button { background: transparent; border: 1px solid var(--accent-green); color: var(--accent-green); padding: 1rem; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 0.2em; transition: 0.3s; }
+button:hover { background: var(--accent-green); color: black; }
+
+/* Notification & Modal */
+#toast { position: fixed; top: 20px; right: -400px; background: #0a0f19; border: 1px solid var(--accent-green); color: var(--accent-green); padding: 1rem 2rem; transition: 0.5s; z-index: 1000; }
+#toast.show { right: 20px; }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
+.modal-content { background: #0a0f19; padding: 3rem; border: 1px solid #22c55e; text-align: center; max-width: 400px; }
+.modal-btn { display: block; width: 100%; padding: 1rem; margin-top: 1rem; background: transparent; border: 1px solid #22c55e; color: white; cursor: pointer; }
+.modal-btn:hover { background: #22c55e; color: black; }
