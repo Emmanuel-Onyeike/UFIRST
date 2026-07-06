@@ -203,29 +203,34 @@ body {
 }
 /* Impact Stats Container - Optimized Flexbox */
 /* Impact Stats Container - Horizontal Flex */
+/* Base styles for PC (Desktop first) */
 .stats-grid {
-    display: flex;
-    flex-direction: row;        /* Aligns items horizontally */
-    justify-content: center;    /* Keeps them centered */
-    align-items: center;        /* Aligns them vertically */
-    gap: 2rem;                  /* Space between left, middle, and right */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on PC */
+    gap: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
+    padding: 0 2rem;
 }
 
 .stat-card {
-    background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    flex: 1;
-    max-width: 350px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border-top: 2px solid rgba(34, 197, 94, 0.2); /* "Top light" engineering detail */
 }
 
+/* MOBILE VIEW FIX */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack into 1 column on mobile */
+        gap: 3rem; /* Increase gap for better readability on small screens */
+    }
+    
+    .stat-number {
+        font-size: 2.5rem; /* Slightly smaller for mobile if needed */
+    }
+}
 .stat-card::before {
     content: '';
     position: absolute;
