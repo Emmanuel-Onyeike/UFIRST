@@ -40,3 +40,31 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.classList.add("active");
 }
+
+
+//// for the scroll section 
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
+let progress = 0;
+
+function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+    document.getElementById('carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+    progress = 0; // Reset progress
+}
+
+// Auto-progress logic
+setInterval(() => {
+    progress += 0.5; // Controls speed
+    progressBar.style.width = progress + "%";
+    
+    if (progress >= 100) {
+        moveSlide(1);
+        progress = 0;
+    }
+}, 50);
+
+// Hover interaction to stop/start
+const container = document.querySelector('.carousel-container');
+container.addEventListener('mouseenter', () => progress = progress); // Pause logic
