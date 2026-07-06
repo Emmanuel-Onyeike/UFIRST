@@ -1,19 +1,31 @@
-/* ceo.css */
-:root {
-    --bg-dark: #0a0f19;
-    --accent-green: #22c55e;
+/* ceo.css - Warm, Humanitarian Aesthetic */
+body { background-color: #020617; color: #f1f5f9; font-family: 'Inter', sans-serif; }
+
+.page-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    align-items: start;
 }
 
-body { background-color: var(--bg-dark); color: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; }
+.ceo-portrait {
+    background: #0f172a; /* Softer dark blue instead of harsh black */
+    border-radius: 12px; /* Rounded corners feel more human/organic */
+    min-height: 500px;
+}
 
-.page-container { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+h1 { font-size: 3rem; line-height: 1.1; margin: 1rem 0; color: #ffffff; }
+h2 { color: var(--accent-green); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; }
+p { color: #e2e8f0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
 
-.ceo-portrait { background: #1e293b; height: 500px; border-left: 8px solid var(--accent-green); position: sticky; top: 4rem; }
+.signature { font-family: 'Georgia', serif; font-size: 1.5rem; color: #ffffff; margin-top: 2rem; font-style: italic; }
 
-.ceo-content h1 { font-size: 3.5rem; line-height: 1; margin-bottom: 2rem; }
-.ceo-content h2 { color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; margin-bottom: 1rem; }
-.ceo-content p { font-size: 1.15rem; line-height: 1.9; color: #cbd5e1; margin-bottom: 1.5rem; }
-
-.signature { font-family: 'Brush Script MT', cursive; font-size: 2rem; margin-top: 3rem; color: var(--accent-green); }
-
-.back-link { color: var(--accent-green); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 2rem; }
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .page-container { grid-template-columns: 1fr; gap: 2rem; margin: 2rem auto; }
+    .ceo-portrait { min-height: 300px; width: 100%; }
+    h1 { font-size: 2.2rem; }
+}
