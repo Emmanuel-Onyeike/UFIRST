@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Secure Channel</title>
     <link rel="stylesheet" href="/styles/contact.css">
 </head>
 <body>
     <div class="page-container">
-        <a href="/index.html" style="color: #475569; font-size: 0.7rem;">← RETURN TO HOME</a>
+        <a href="/index.html" style="color: #475569; font-size: 0.7rem; text-decoration: none;">← RETURN TO HOME</a>
         <h1>COMMUNICATION CHANNEL</h1>
+        
         <form id="contactForm">
-            <input type="text" placeholder="NAME" required>
-            <input type="email" placeholder="EMAIL" required>
-            <input type="text" placeholder="SUBJECT" required>
-            <textarea placeholder="MESSAGE" rows="5"></textarea>
-            <button type="submit" id="submitBtn">SEND</button>
+            <input type="text" placeholder="FULL NAME" required>
+            <input type="email" placeholder="EMAIL ADDRESS" required>
+            <input type="text" placeholder="PURPOSE OF CONTACT" required>
+            <textarea placeholder="MESSAGE" rows="6"></textarea>
+            <button type="submit" id="submitBtn">SEND BRIEFING</button>
         </form>
     </div>
 
-    <div id="toast">SENT SUCCESSFUL</div>
+    <div id="toast">DATA PACKET SENT</div>
 
     <div class="modal-overlay" id="modal">
         <div class="modal-content">
             <h3 style="color:var(--accent-green)">CONNECTION ESTABLISHED</h3>
-            <p style="font-size: 0.8rem; margin-bottom: 2rem;">CHOOSE YOUR COMMUNICATION :</p>
-            <button class="modal-btn" onclick="window.location.href='https://wa.me/yournumber'">CHAT VIA WHATSAPP</button>
-            <button class="modal-btn" onclick="window.location.href='mailto:support@u-first.org'">CHAT VIA EMAIL</button>
+            <p style="font-size: 0.8rem; margin-bottom: 2rem;">HOW SHALL WE PROCEED?</p>
+            <button class="modal-btn" onclick="window.location.href='https://wa.me/yournumber'">WHATSAPP CHANNEL</button>
+            <button class="modal-btn" onclick="window.location.href='mailto:support@u-first.org'">EMAIL CHANNEL</button>
             <p id="timer" style="margin-top:20px; font-size: 0.6rem; color: #475569;">AUTO-ROUTING IN 6s...</p>
         </div>
     </div>
@@ -38,7 +40,7 @@
 
         form.onsubmit = (e) => {
             e.preventDefault();
-            btn.innerText = "UPLOADING DATA..."; // 5s Loading state
+            btn.innerText = "UPLOADING...";
             btn.disabled = true;
             
             setTimeout(() => {
@@ -54,8 +56,8 @@
                             window.location.href = 'https://wa.me/yournumber';
                         }
                     }, 1000);
-                }, 2000);
-            }, 5000);
+                }, 1000);
+            }, 2000);
         };
     </script>
 </body>
