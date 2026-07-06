@@ -1,19 +1,27 @@
 /* about.css */
-:root {
-    --bg-dark: #0a0f19;
-    --accent-green: #22c55e;
-    --text-main: #f8fafc;
-    --text-muted: #cbd5e1;
+.about-hero {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 
-body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-.page-container { max-width: 800px; margin: 5rem auto; padding: 0 2rem; }
+.about-hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 1rem; }
+.about-hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
 
-/* Typography */
-h1 { font-size: 3rem; margin-bottom: 2rem; }
-h2 { color: var(--accent-green); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 3rem; }
-p { font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
 
-/* Elements */
-.intro-text { font-size: 1.8rem; font-weight: 300; line-height: 1.5; margin-bottom: 3rem; color: #ffffff; border-left: 3px solid var(--accent-green); padding-left: 1.5rem; }
-.back-link { color: var(--accent-green); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
+.about-card { border-left: 2px solid var(--accent-green); padding-left: 2rem; }
+.about-card h3 { color: var(--accent-green); margin-bottom: 1rem; }
+
+/* Responsive Mobile Switch */
+@media (max-width: 768px) {
+    .about-hero h1 { font-size: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
