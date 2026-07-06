@@ -405,3 +405,31 @@ footer {
         margin-top: 3rem;
     }
 }
+.image-section {
+    width: 100%;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    width: 90%; /* Responsive width */
+    max-width: 1000px; /* PC limit */
+    height: 400px; /* Fixed height for consistency */
+    overflow: hidden;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box perfectly */
+    transition: transform 0.5s ease;
+}
+
+/* Mobile Scaling */
+@media (max-width: 768px) {
+    .image-container {
+        height: 250px; /* Shorter height for mobile to fit screen better */
+    }
+}
