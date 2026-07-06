@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ufirst | Global Impact</title>
+    <title>BRIDGEHOPE | Global Impact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-white text-slate-900">
 
     <!-- Header -->
     <header class="bg-slate-900 text-white p-6 sticky top-0 z-50 shadow-2xl border-b border-slate-700">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-3xl font-extrabold tracking-tighter italic">U<span class="text-blue-500">first</span></div>
+            <div class="text-3xl font-extrabold tracking-tighter italic">BRIDGE<span class="text-blue-500">HOPE</span></div>
             
             <nav class="hidden md:flex space-x-8 items-center font-medium">
                 <a href="#" class="hover:text-blue-400 transition">About</a>
@@ -58,7 +59,7 @@
         <div class="content-text">
             <h2 class="font-bold">Building a Better Future</h2>
             <p>
-                At Ufirst, we believe that sustainable change starts with direct action. 
+                At BRIDGEHOPE, we believe that sustainable change starts with direct action. 
                 We work tirelessly to empower communities by providing the resources, 
                 education, and infrastructure they need to thrive independently.
             </p>
@@ -69,7 +70,7 @@
     <section class="max-w-4xl mx-auto py-16 px-6">
         <!-- Tab Headers -->
         <div class="flex border-b border-slate-200" id="tabContainer">
-            <button onclick="openTab(event, 'about')" class="tab-btn active">About Ufirst</button>
+            <button onclick="openTab(event, 'about')" class="tab-btn active">About BRIDGEHOPE</button>
             <button onclick="openTab(event, 'mission')" class="tab-btn">Mission & Vision</button>
         </div>
     
@@ -78,7 +79,7 @@
             <h2 class="text-3xl font-bold mb-4 text-slate-900">Empowering Humanity First.</h2>
             <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
                 <p>
-                    Ufirst is a community driven organization dedicated to bridging the gap for the less privileged. 
+                    BRIDGEHOPE is a community driven organization dedicated to bridging the gap for the less privileged. 
                     We provide structured humanitarian aid and sustainable relief programs that foster long term growth 
                     rather than just temporary solutions.
                 </p>
@@ -112,11 +113,7 @@
                 <div>
                     <h3 class="text-xl font-semibold text-blue-700 mb-2">Our Vision</h3>
                     <p>
-                        We envision a world where every individual has access to the resources necessary 
-                        to lead a life of dignity and security. By connecting generous donors with 
-                        real-world impact, we aim to bridge the gap between resources and those who 
-                        need them most, maximizing the reach of every contribution to create 
-                        long-term, systemic change.
+                       Our mission is to empower local institutions and vulnerable populations through innovative programs that improve livelihoods, strengthen community resilience and create equal opportunites for all.
                     </p>
                 </div>
                 <div>
@@ -128,6 +125,97 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="carousel-container">
+        <!-- Carousel Track -->
+        <div class="carousel-track" id="carousel">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">BRIDGEHOPE FOUNDATION</h2>
+                <p class="text-lg md:text-xl leading-relaxed">
+                    An organisation centered on humanitarian and Environmental Services.<br><br>
+                    A sustainable development initiative for Women, Children, Persons with Disabilities, Agriculture, and Sanitation in Rural Nigeria.
+                </p>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">ORGANIZATION BACKGROUND</h2>
+                <p class="text-lg md:text-xl leading-relaxed">
+                    BRIDGEHOPE is a development-focused organization established to promote inclusive growth, community participation, and sustainable development throughout Nigeria.
+                </p>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">FOUNDATION SUMMARY</h2>
+                <p class="text-base md:text-lg leading-relaxed">
+                    Nigeria's rural communities remain the backbone of the nation's economy, yet millions face poverty, food insecurity, and inadequate institutional support. Women, children, and persons with disabilities are often the most excluded. 
+                    <br><br>
+                    BRIDGEHOPE FOUNDATION is a non-governmental organization committed to empowering local institutions as the foundation for sustainable development.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Navigation (Positioned correctly now) -->
+        <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
+    
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="text-blue-600 font-bold uppercase tracking-widest">Our Approach</h3>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-2">Tackling Challenges Together</h2>
+        </div>
+    
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- Left Side: Problem Statement -->
+            <div class="bg-slate-900 p-10 rounded-2xl text-white shadow-xl">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-blue-500 mr-4"></i> Problem Statement
+                </h3>
+                <p class="text-slate-300 leading-relaxed text-lg">
+                    Rural communities in Nigeria face systemic exclusion from basic development opportunities. 
+                    Food insecurity, poor sanitation, and lack of institutional support create cycles of poverty that prevent 
+                    women, children, and persons with disabilities from reaching their potential.
+                </p>
+            </div>
+    
+            <!-- Right Side: Our Solution -->
+            <div class="space-y-8">
+                <!-- Item 1 -->
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-600 text-3xl"><i class="fas fa-seedling"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold">Sustainable Agriculture</h4>
+                        <p class="text-slate-600">Empowering rural farmers with tools and techniques to ensure food security.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-600 text-3xl"><i class="fas fa-bath"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold">Sanitation & Hygiene</h4>
+                        <p class="text-slate-600">Building essential infrastructure to prevent disease and improve community health.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-600 text-3xl"><i class="fas fa-wheelchair"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold">Inclusive Support</h4>
+                        <p class="text-slate-600">Providing dedicated resources for persons with disabilities and vulnerable groups.</p>
+                    </div>
+                </div>
+            </div>
+    
         </div>
     </section>
 
