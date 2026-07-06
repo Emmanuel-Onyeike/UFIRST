@@ -388,3 +388,20 @@ footer {
     letter-spacing: 0.2em;
     text-transform: uppercase;
 }
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    footer {
+        padding: 3rem 1.5rem 2rem 1.5rem; /* Tighter padding for mobile */
+    }
+
+    .footer-grid {
+        gap: 2rem; /* Reduce gap on mobile to save vertical space */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem; /* Add space between stacked items */
+        text-align: center; /* Center the text */
+        margin-top: 3rem;
+    }
+}
