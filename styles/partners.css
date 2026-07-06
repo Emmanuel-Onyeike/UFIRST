@@ -1,24 +1,62 @@
-/* partners.css */
-:root {
-    --bg-dark: #0a0f19;
-    --accent-green: #22c55e;
-    --text-main: #f8fafc;
+/* Base Layout (PC View) */
+.page-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
-body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on PC */
+    gap: 3rem;
+    margin-top: 4rem;
+}
 
-.page-container { max-width: 1000px; margin: 4rem auto; padding: 0 2rem; }
+.partner-card {
+    background: #05080f;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
 
-.back-link { color: var(--accent-green); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 3rem; display: block; }
+.partner-card:hover {
+    border-color: var(--accent-green);
+}
 
-h1 { font-size: 3rem; margin-bottom: 3rem; text-transform: uppercase; }
+.partner-logo {
+    margin-bottom: 1.5rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
 
-.partners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+.partner-logo img {
+    max-width: 100%;
+    filter: grayscale(20%); /* Softer, cohesive look */
+}
 
-.partner-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); padding: 2rem; transition: transform 0.3s ease; }
-.partner-card:hover { border-color: var(--accent-green); }
+/* MOBILE RESPONSIVENESS (The "Perfect" Update) */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 1.5rem;
+        margin: 2rem auto;
+    }
 
-.partner-logo { height: 150px; background: #1e293b; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #475569; }
+    .partners-grid {
+        grid-template-columns: 1fr; /* Stack into 1 single column */
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
-h3 { color: white; margin-bottom: 0.5rem; }
-p { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; }
+    .partner-card {
+        padding: 1.5rem; /* Reduced padding for mobile */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .partner-logo {
+        min-height: 80px; /* Slightly smaller logo area for mobile */
+    }
+}
