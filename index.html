@@ -3,208 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Nxxt | NGO Initiative</title>
+    <title>Ufirst | Global Impact</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="styles/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
-<body class="text-white min-h-screen">
+<body class="bg-white text-slate-900">
 
-    <!-- Navbar -->
-    <nav class="nav-blur sticky top-0 z-50 px-6 py-4 flex items-center justify-between">
-       <a href="/" class="logo-container">
-        <span class="text-3xl logo-u">U</span>
-        <span class="text-lg logo-first">FIRST</span>
-    </a>
+    <!-- Header -->
+    <header class="bg-slate-900 text-white p-6 sticky top-0 z-50 shadow-2xl border-b border-slate-700">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-3xl font-extrabold tracking-tighter italic">U<span class="text-blue-500">first</span></div>
+            
+            <nav class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#" class="hover:text-blue-400 transition">About</a>
+                <a href="#" class="hover:text-blue-400 transition">Mission</a>
+                <a href="#" class="hover:text-blue-400 transition">CEO</a>
+                <a href="#" class="hover:text-blue-400 transition">Partners</a>
+                <a href="#" class="hover:text-blue-400 transition">Contact</a>
+                <a href="#" class="nav-donate-btn">Donate</a>
+            </nav>
 
-     <!-- Enhanced Desktop Nav -->
-<div class="hidden md:flex space-x-10 items-center">
-    <a href="pages/about.html" class="nav-link">About</a>
-   
-    <a href="pages/ceo.html" class="nav-link">Vision</a>
-    <a href="pages/partners.html" class="nav-link">Partners</a>
-    <a href="pages/contact.html" class="nav-link">Contact</a>
-    
-    <!-- Donate Button -->
-    <a href="pages/donate.html" class="btn-nav-donate hover:shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-        Donate
-    </a>
-</div>
+            <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+        </div>
+    </header>
 
-<button id="theme-toggle" aria-label="Toggle Theme">
-    <!-- Sun Icon (visible in Dark Mode) -->
-    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <!-- Moon Icon (visible in Light Mode) -->
-    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-</button>
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-green-400 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-    </nav>
-
-    <!-- Mobile Dropdown -->
- <!-- Enhanced Mobile Dropdown -->
-<div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 p-8 flex flex-col">
-    <a href="pages/about.html" class="mobile-nav-link">About</a>
-   
-    <a href="pages/ceo.html" class="mobile-nav-link">Vision</a>
-    <a href="pages/partners.html" class="mobile-nav-link">Partners</a>
-    <a href="pages/contact.html" class="mobile-nav-link">Contact</a>
-    
-    <!-- Mobile Donate Button -->
-    <a href="pages/donate.html" class="btn-extra mt-6 text-center py-4 font-bold uppercase tracking-[0.2em]">
-        Donate
-    </a>
-</div>
+    <!-- Slide-out Modal -->
+    <div id="mobileMenu" class="modal">
+        <button id="closeBtn" class="absolute top-6 right-6 text-4xl">&times;</button>
+        <div class="flex flex-col pt-32 px-10 space-y-8 text-2xl font-bold">
+            <a href="#" class="hover:text-blue-400">About</a>
+            <a href="#" class="hover:text-blue-400">Mission & Vision</a>
+            <a href="#" class="hover:text-blue-400">CEO</a>
+            <a href="#" class="hover:text-blue-400">Partners</a>
+            <a href="#" class="hover:text-blue-400">Contact</a>
+            <a href="#" class="mobile-donate-btn">Donate Now</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
-    <main class="max-w-7xl mx-auto px-6 py-24 flex flex-col items-start relative">
-    
-        <!-- Hero Section -->
-        <div class="status-badge mb-8">
-            <span class="status-dot"></span>
-            Mission 2026: Bridging the Divide
+    <section id="hero" class="hero-section flex items-center justify-center text-center">
+        <div class="hero-overlay p-8 md:p-16 rounded-2xl border border-white/10 backdrop-blur-sm">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Empowering Humanity.</h1>
+            <p class="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto">Join a global movement dedicated to putting people first. Together, we can build a better tomorrow.</p>
+            <a href="#" class="hero-donate-btn">DONATE</a>
         </div>
+    </section>
+
+
+    <section class="content-section">
+        <!-- Image Side -->
+        <img src="/img/NGO IMG 3.jpeg" alt="Our Work" class="content-img">
         
-        <h1 class="hero-headline font-black mb-8">
-            BUILDING <br>
-            <span class="text-green-400 glow-text equity-text">DIGITAL EQUITY.</span>
-        </h1>
-        
-        <div class="flex flex-col md:flex-row gap-8 items-start md:items-center mb-24">
-            <p class="text-slate-400 text-lg md:text-xl max-w-lg border-l-4 border-green-500 pl-6 leading-relaxed">
-                We empower communities by providing the resources, education, and tools necessary to thrive in an interconnected world. 
-                <span class="block mt-2 text-white font-semibold">Your support builds the foundation for tomorrow.</span>
+        <!-- Text Side -->
+        <div class="content-text">
+            <h2 class="font-bold">Building a Better Future</h2>
+            <p>
+                At Ufirst, we believe that sustainable change starts with direct action. 
+                We work tirelessly to empower communities by providing the resources, 
+                education, and infrastructure they need to thrive independently.
             </p>
-            
-            <a href="pages/donate.html" class="btn-extra px-12 py-5 font-black uppercase tracking-[0.2em] whitespace-nowrap">
-                DONATE
-            </a>
+            <a href="/pages/mission.html" class="nav-donate-btn">Read Our Mission</a>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto py-16 px-6">
+        <!-- Tab Headers -->
+        <div class="flex border-b border-slate-200" id="tabContainer">
+            <button onclick="openTab(event, 'about')" class="tab-btn active">About Ufirst</button>
+            <button onclick="openTab(event, 'mission')" class="tab-btn">Mission & Vision</button>
         </div>
     
-        <!-- Impact Section: Flexbox Vertical Stack -->
-       <!-- Impact Section: Horizontal Flex Stack -->
-<section class="w-full flex flex-col items-center py-16">
-    <div class="mb-12 flex flex-col items-center">
-        <h2 class="text-3xl font-bold text-white mb-2">BY THE NUMBERS</h2>
-        <div class="h-1 w-20 bg-green-500"></div>
-    </div>
-
-    <div class="stats-grid">
-        <div class="stat-card">
-            <span class="stat-number text-white text-4xl font-black">3.2K+</span>
-            <span class="stat-label text-green-500 uppercase text-xs tracking-widest mt-2">People Empowered</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number text-white text-4xl font-black">15+</span>
-            <span class="stat-label text-green-500 uppercase text-xs tracking-widest mt-2">Communities</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number text-white text-4xl font-black">450</span>
-            <span class="stat-label text-green-500 uppercase text-xs tracking-widest mt-2">Mentorship Sessions</span>
-        </div>
-    </div>
-</section>
-        <!-- Strategic Pillars Section -->
-<section class="max-w-7xl mx-auto px-6 py-24">
-    <div class="mb-16">
-        <h2 class="text-3xl font-bold text-white tracking-wider">STRATEGIC DEPLOYMENT</h2>
-        <div class="h-1 w-20 bg-green-500 mt-2"></div>
-    </div>
-
-    <div class="pillars-grid flex-col md:flex-row">
-        
-        <!-- Infrastructure -->
-        <div class="pillar-card group">
-            <i class="fas fa-server pillar-icon"></i>
-            <span class="pillar-title">Infrastructure</span>
-            <p class="pillar-desc">Deploying robust, scalable digital systems to underserved areas to ensure seamless connectivity and reliable access.</p>
-        </div>
-        
-        <!-- Education -->
-        <div class="pillar-card group">
-            <i class="fas fa-laptop-code pillar-icon"></i>
-            <span class="pillar-title">Education</span>
-            <p class="pillar-desc">Providing structured mentorship and technical curriculum to bridge the digital divide and prepare future innovators.</p>
-        </div>
-
-        <!-- Community/Support -->
-    <!-- Empowerment Pillar with Icon -->
-<div class="pillar-card group">
-    <i class="fas fa-handshake pillar-icon"></i>
-    <span class="pillar-title">Empowerment</span>
-    <p class="pillar-desc">Creating sustainable pathways for entrepreneurship and long-term economic independence through community-led support.</p>
-</div>
-
-    </div>
-</section>
-
-<section class="image-section">
-    <div class="image-container">
-        <!-- Replace the src with your actual image path -->
-        <img src="/img/NGO IMG 3.jpeg" alt="U-FIRST Community Impact">
-    </div>
-</section>
-
-<!-- Vision Section -->
-<section class="max-w-7xl mx-auto px-6 py-24">
-    <div class="vision-panel">
-        <h3 class="text-green-500 font-bold uppercase tracking-[0.3em] text-xs mb-6">Our Vision</h3>
-        <p class="vision-text">
-            "To engineer a future where access to technology is not a privilege, but a fundamental foundation for human progress across every community."
-        </p>
-    </div>
-</section>
-
-    </main>
-    <footer>
-        <div class="footer-grid">
-            <!-- Brand Column -->
-            <div class="footer-column">
-                <div class="text-white font-black text-2xl mb-4">U<span class="text-green-500">|</span>FIRST</div>
-                <p class="text-slate-500 text-sm leading-relaxed">Engineering digital equity for a connected world.</p>
-            </div>
-    
-            <!-- Links Columns -->
-            <div class="footer-column">
-                <h4>Platform</h4>
-             
-                <a href="/pages/Database.html" class="footer-link">Database</a>
-                <a href="/pages/Documentation.html" class="footer-link">Documentation</a>
-            </div>
-    
-            <div class="footer-column">
-                <h4>Organization</h4>
-                <a href="/pages/about.html" class="footer-link">About</a>
-                <a href="/pages/transparency.html" class="footer-link">Transparency</a>
-              
+        <!-- Tab Content -->
+        <div id="about" class="tab-content py-8">
+            <h2 class="text-3xl font-bold mb-4 text-slate-900">Empowering Humanity First.</h2>
+            <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
+                <p>
+                    Ufirst is a community driven organization dedicated to bridging the gap for the less privileged. 
+                    We provide structured humanitarian aid and sustainable relief programs that foster long term growth 
+                    rather than just temporary solutions.
+                </p>
+                <p>
+                    Our core philosophy is rooted in the belief that every individual deserves dignity, security, 
+                    and the opportunity to thrive. By operating at the grassroots level, we identify the most 
+                    pressing needs of our communities—ranging from food security and medical assistance to 
+                    essential education and vocational training.
+                </p>
+                <p>
+                    We don’t work in isolation. Ufirst operates through a network of local leaders, passionate 
+                    volunteers, and strategic partners who share our vision for a more equitable society. 
+                    Through transparency, efficiency, and a deep commitment to our cause, we ensure that 
+                    every resource is leveraged to create tangible, lasting impact.
+                </p>
             </div>
         </div>
     
-        <!-- Metadata Footer -->
-        <div class="footer-bottom max-w-7xl mx-auto px-6">
-            <div>&copy; 2026 U-FIRST NGO. ALL RIGHTS RESERVED.</div>
-            <div class="flex items-center gap-4">
-                <span>SYSTEM STATUS: OPERATIONAL</span>
-                <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                <span>POWERED BY TECH NXXT COMPANY</span>
+        <div id="mission" class="tab-content py-8 hidden">
+            <h2 class="text-3xl font-bold mb-4 text-slate-900">Our Vision for Tomorrow</h2>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Our Mission</h3>
+                    <p>
+                        To eradicate barriers to basic human needs through targeted humanitarian action. 
+                        We are committed to promoting awareness, fostering strategic partnerships, and 
+                        implementing programs that provide immediate relief while building the foundation 
+                        for sustainable community development.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Our Vision</h3>
+                    <p>
+                        We envision a world where every individual has access to the resources necessary 
+                        to lead a life of dignity and security. By connecting generous donors with 
+                        real-world impact, we aim to bridge the gap between resources and those who 
+                        need them most, maximizing the reach of every contribution to create 
+                        long-term, systemic change.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Our Core Values</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Integrity:</strong> Operating with total transparency and accountability.</li>
+                        <li><strong>Empowerment:</strong> Providing tools, not just temporary aid.</li>
+                        <li><strong>Collaboration:</strong> Building strong partnerships for wider reach.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
