@@ -1,79 +1,71 @@
-/* General Page Styling */
+/* about.css */
+:root {
+    --bg-dark: #0a0f19;
+    --accent-green: #22c55e;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+}
+
+body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+.page-container { max-width: 800px; margin: 5rem auto; padding: 0 2rem; }
+
+/* Typography */
+h1 { font-size: 3rem; margin-bottom: 2rem; }
+h2 { color: var(--accent-green); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 3rem; }
+p { font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Elements */
+.intro-text { font-size: 1.8rem; font-weight: 300; line-height: 1.5; margin-bottom: 3rem; color: #ffffff; border-left: 3px solid var(--accent-green); padding-left: 1.5rem; }
+.back-link { color: var(--accent-green); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
+/* Base Industrial Grid */
 body {
-    background-color: #020617; /* Your dark background */
-    color: #e2e8f0; /* Softer white for general text */
+    /* Base background */
+    background-color: #020617;
+    
+    /* Dot Matrix Pattern */
+    background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
+    background-size: 40px 40px;
+    
+    /* Text and Layout */
+    color: #ffffff;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.8;
+    min-height: 100vh;
     margin: 0;
+    
+    /* Ensure smooth transitions if you toggle modes */
+    transition: background-color 0.3s ease, background-image 0.3s ease;
 }
 
-.page-container {
-    max-width: 700px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+/* Light Mode Override (Optional: Add this if you use the toggle) */
+body.light-mode {
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at 2px 2px, #cbd5e1 1px, transparent 0);
+    color: #0f172a;
+}
+body.light-mode .bank-card, 
+body.light-mode .partner-card,
+body.light-mode .modal-content {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
 }
 
-/* Navigation - Now Bigger */
-.back-link {
-    display: inline-block;
-    color: #94a3b8; /* Lighter grey for better contrast */
-    text-decoration: none;
-    font-size: 1rem; /* Increased size */
-    font-weight: 700; /* Bolder */
+body.light-mode h1, body.light-mode h2, body.light-mode h3 { color: #000000; }
+body.light-mode p { color: #475569; }
+
+/* The Toggle Button Styling */
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 3rem;
-    transition: color 0.2s;
+    margin-right: 1rem;
+    transition: 0.3s;
 }
 
-.back-link:hover { color: #22c55e; }
-
-/* Typography Hierarchy - Updated for Dark Mode */
-h1 {
-    font-size: 3rem;
-    color: #ffffff; /* Bright white */
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
-}
-
-h2 {
-    font-size: 1.75rem;
-    color: #ffffff; /* Bright white */
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-/* Subtle accent for headers */
-h2::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: #22c55e;
-    margin-top: 0.5rem;
-}
-
-p {
-    font-size: 1.15rem;
-    color: #cbd5e1; /* Lighter text for readability on dark BG */
-    margin-bottom: 1.5rem;
-}
-
-.intro-text {
-    font-size: 1.4rem;
-    color: #f1f5f9; /* Near white for emphasis */
-    font-weight: 400;
-    line-height: 1.6;
-    border-left: 4px solid #22c55e; /* Green accent matches theme */
-    padding-left: 1.5rem;
-    margin-bottom: 4rem;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 640px) {
-    .page-container { margin: 2rem auto; }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.5rem; }
-    .back-link { font-size: 0.9rem; }
+#theme-toggle:hover {
+    background: var(--accent-green);
+    color: white;
 }

@@ -1,66 +1,23 @@
-/* partners.css */
-
-/* Global Dark Theme Settings */
-body {
-    background-color: #020617; /* Your specific dark background */
-    color: #f8fafc;           /* Main text color */
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-}
-
-.page-container {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-}
-
-h1 { color: #ffffff; font-size: 3rem; margin-bottom: 1rem; }
-h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 0.5rem; }
-p { color: #94a3b8; line-height: 1.6; }
-
-/* Grid Layout */
-.partners-grid {
+/* Responsive Grid Strategy */
+.grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-top: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-.partner-card {
-    background: #0a0f19; /* Slightly lighter than body for depth */
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-}
-
-.partner-card:hover {
-    border-color: #22c55e; /* Green hover state */
-}
-
-.partner-logo {
-    margin-bottom: 1.5rem;
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.partner-logo img {
-    max-height: 100%;
-    max-width: 100%;
-    filter: brightness(0.9) contrast(1.1); /* Ensures images fit the dark theme */
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .page-container { padding: 0 1.5rem; }
-    
-    .partners-grid {
-        grid-template-columns: 1fr; /* Stacked */
-        gap: 2rem;
-        margin-top: 2rem;
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    h1 { font-size: 2.2rem; }
-    
-    .partner-card { padding: 1.5rem; }
+/* Hover effect for the government partner card */
+.partner-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ensure images maintain aspect ratio */
+img {
+    max-width: 100%;
+    height: auto;
 }

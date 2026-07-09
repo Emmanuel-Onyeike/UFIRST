@@ -3,35 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transparency | U-FIRST</title>
+    <title>Our Impact | BridgeHope</title>
     <link rel="stylesheet" href="/styles/transparency.css">
+    <!-- Add this to your head -->
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <div class="page-container">
-        <a href="/index.html" class="back-link">← RETURN TO HOME</a>
+<body class="bg-slate-50">
+    <div class="page-container max-w-5xl mx-auto py-20 px-6">
+        <a href="/index.html" class="text-blue-600 font-bold hover:underline mb-8 block">← RETURN TO HOME</a>
         
-        <h1>Transparency Report</h1>
-        <p style="color: var(--text-muted); max-width: 600px;">
-            We believe that accountability is the cornerstone of our mission. This report provides clarity on our operational reach and the direct impact of your contributions.
-        </p>
+        <header class="mb-16 text-center">
+            <h1 class="text-5xl font-extrabold text-slate-900">Our Strategic Impact</h1>
+            <p class="text-slate-500 mt-4 max-w-xl mx-auto text-lg">
+                We track every unit of resource to ensure maximum yield in rural development. Here is how we measure our progress.
+            </p>
+        </header>
 
-        <h2>Impact Metrics (2026)</h2>
-        <div class="report-grid">
-            <div class="report-card">
-                <div class="stat-header">85%</div>
-                <div class="stat-desc">OF FUNDS DIRECTLY TO PROGRAMMATIC OPERATIONS</div>
+        <!-- Impact Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition-colors">
+                <i class="fas fa-chart-line text-blue-600 text-3xl mb-4"></i>
+                <div class="text-4xl font-extrabold text-slate-900">85%</div>
+                <div class="text-slate-500 font-bold uppercase tracking-widest text-sm mt-1">Direct Operational Efficiency</div>
+                <p class="text-slate-600 mt-4">We maintain lean infrastructure, ensuring the vast majority of contributions reach the field directly.</p>
             </div>
-            <div class="report-card">
-                <div class="stat-header">1,200+</div>
-                <div class="stat-desc">INDIVIDUALS REACHED VIA OUTREACH</div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition-colors">
+                <i class="fas fa-users text-blue-600 text-3xl mb-4"></i>
+                <div class="text-4xl font-extrabold text-slate-900">1,200+</div>
+                <div class="text-slate-500 font-bold uppercase tracking-widest text-sm mt-1">Individuals Reached</div>
+                <p class="text-slate-600 mt-4">Direct community engagement across our current project sites in rural Nigeria.</p>
             </div>
         </div>
 
-        <h2>Operational Accountability</h2>
-        <div class="report-card">
-            <p><strong>Our Commitment:</strong> We ensure that every contribution is tracked and utilized to maximize community impact. We conduct regular internal reviews to ensure our programs remain efficient and aligned with the needs of those we serve.</p>
-            <p><strong>Audits:</strong> Detailed financial summaries are prepared quarterly. We are committed to an open-book policy for our project partners to ensure full trust in our operational processes.</p>
+        <!-- Accountability Section -->
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Operational Accountability</h2>
+        <div class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="font-bold text-xl mb-4 border-b border-slate-700 pb-2">Commitment</h3>
+                    <p class="text-slate-400">Every contribution is logged within our internal database, subjected to rigorous internal audits to prevent waste and maximize tangible results.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-4 border-b border-slate-700 pb-2">Financial Transparency</h3>
+                    <p class="text-slate-400">Quarterly audits and an open-book policy for our project partners ensure that our fiscal health is as strong as our community impact.</p>
+                </div>
+            </div>
         </div>
     </div>
+    <footer class="bg-[#0b1626] text-slate-300 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+            
+            <!-- Column 1: Branding -->
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-6">BridgeHope</h2>
+                <p class="mb-6 leading-relaxed">Engineering sustainable solutions for rural development through transparency and tactical action.</p>
+                      <!-- Column 2 & 3: Navigation -->
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+    
+            <!-- Column 2 & 3: Navigation -->
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Organization</h4>
+                <ul class="space-y-4">
+                    <li><a href="/pages/about.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>About Us</a></li>
+                    <li><a href="/pages/transparency.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>Our Impact</a></li>
+                    <li><a href="/pages/Documentation.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>Strategic Goals</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>NEW HAVEN, ENUGU, Nigeria</li>
+                    <li class="flex items-center"><i class="fas fa-phone mt-1 mr-3 text-blue-500"></i>+234 7079 845 343</li>
+                    <li class="flex items-center"><i class="fas fa-envelope mt-1 mr-3 text-blue-500"></i>info@bridgehope.org</li>
+                </ul>
+            </div>
+    
+            <!-- Column 4: Newsletter -->
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
+                <p class="text-xs mb-4">Stay updated with our latest project deployments.</p>
+                <input type="email" placeholder="Your email address" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-lg mb-3 outline-none focus:border-blue-500 text-white">
+                <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition">Subscribe</button>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+            <p>&copy; 2026 BridgeHope Foundation. All Rights Reserved.</p>
+            
+            <!-- Added navigational links for professionalism -->
+         
+        
+            <!-- Developer Credit with hover effect -->
+            <p class="developer-tag">
+                Engineered by <span class="text-blue-400 font-bold cursor-pointer hover:text-white transition-colors">Tech Nxxt</span>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate | U-FIRST</title>
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/donate.css">
 </head>
 <body>
     <div class="donate-page">
+        <!-- Navigation -->
         <a href="/index.html" class="back-link">← RETURN TO CORE</a>
         
+        <!-- Mission Header -->
         <section class="mission-hero">
-            <h2>Support Our Mission</h2>
+            <h2>Mission Directive</h2>
             <p>HELP US TO BRING HOPE FIRST TO THOSE IN NEED.</p>
         </section>
 
+        <!-- Account Data Container -->
         <section class="bank-grid">
             <div class="bank-card">
                 <h3>Financial Credentials</h3>
@@ -24,10 +28,11 @@
             <div class="bank-card">
                 <h3>Institution Details</h3>
                 <p><strong>BANK:</strong> TECH NXXT FINANCIAL SERVICES</p>
-                <p><strong>CODE:</strong> TXXT-01</p>
+                
             </div>
         </section>
 
+        <!-- Receipt Upload Trigger -->
         <div class="upload-section" id="uploadTrigger">
             <h2 style="color: var(--accent-green)">INITIATE RECEIPT UPLOAD</h2>
             <p>Provide transaction evidence for verification.</p>
@@ -35,11 +40,12 @@
         </div>
     </div>
 
+    <!-- Confirmation Modal -->
     <div class="modal-overlay" id="modal">
         <div class="modal-content">
-            <div style="color: var(--accent-green); font-size: 2rem; margin-bottom: 1rem;">✔ CONFIRMED</div>
-            <p>Upload successful. Redirecting to verification...</p>
-            <a href="https://wa.me/234XXXXXXXXXX" id="waLink" style="display:block; color:white; border:1px solid var(--accent-green); padding:1rem; text-decoration:none;">CONNECT VIA WHATSAPP</a>
+            <div class="success-check">✔ CONFIRMED</div>
+            <p>Upload successful. Redirecting to verification channel...</p>
+            <a href="https://wa.me/234XXXXXXXXXX" id="waLink">CONNECT VIA WHATSAPP</a>
             <p id="timer" style="margin-top: 20px; font-size: 0.7rem; color: #64748b;">AUTO-ROUTING IN 4s...</p>
         </div>
     </div>

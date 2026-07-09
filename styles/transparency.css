@@ -1,22 +1,35 @@
-/* transparency.css */
-:root {
-    --bg-dark: #0a0f19;
-    --accent-green: #22c55e;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+/* General Layout */
+body { font-family: sans-serif; line-height: 1.6; }
+
+/* Report Grid */
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; }
+/* Card Hover Animations */
+.report-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
 
-.page-container { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
+.report-card:hover {
+    transform: translateY(-5px);
+}
 
-h1 { font-size: 3rem; color: white; margin-bottom: 2rem; }
-h2 { color: var(--accent-green); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 3rem; }
+/* Dark Section Enhancements */
+.bg-slate-900 {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+}
 
-.report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-.report-card { background: rgba(15, 23, 42, 0.5); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.05); }
+/* Typography clarity */
+h1, h2, .stat-header {
+    letter-spacing: -0.02em;
+}
 
-.stat-header { font-size: 2rem; font-weight: 800; color: white; }
-.stat-desc { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
-
-.back-link { color: var(--accent-green); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+    .text-5xl { font-size: 2.5rem; }
+    .p-10 { padding: 2rem; }
+}

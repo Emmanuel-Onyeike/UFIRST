@@ -2,40 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About U-FIRST | Our Mission</title>
- 
-    <link rel="stylesheet" href="/styles/about.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BridgeHope | Mission & Vision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <div class="page-container">
-        <a href="/index.html" class="back-link">← RETURN TO HOME</a>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
+
+    <!-- Navigation & Toggle -->
+    <nav class="max-w-5xl mx-auto p-6 flex justify-between items-center">
+        <a href="/index.html" class="text-blue-600 font-bold hover:underline"><i class="fas fa-arrow-left mr-2"></i> RETURN TO HOME</a>
+        <button id="theme-toggle" class="p-3 bg-slate-200 rounded-full hover:bg-slate-300 transition">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <header class="mb-20 text-center">
+            <h1 class="text-6xl font-extrabold tracking-tighter mb-6">Our Mission, Our Story.</h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                BridgeHope exists to stand in the gap. We engineer sustainable solutions to ensure every individual has the resources to thrive.
+            </p>
+        </header>
+
+        <!-- Core Philosophy Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-24">
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <i class="fas fa-heart text-blue-600 text-3xl mb-4"></i>
+                <h3 class="font-bold text-lg mb-2">Our Heart</h3>
+                <p class="text-slate-600 text-sm">We believe change happens through empowerment, not quick fixes. We walk alongside those we serve.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <i class="fas fa-rocket text-blue-600 text-3xl mb-4"></i>
+                <h3 class="font-bold text-lg mb-2">Our Impact</h3>
+                <p class="text-slate-600 text-sm">Focused on sustainable outreach, mentorship, and welfare programs that create ripples of progress.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <i class="fas fa-shield-alt text-blue-600 text-3xl mb-4"></i>
+                <h3 class="font-bold text-lg mb-2">Why We Do It</h3>
+                <p class="text-slate-600 text-sm">Because every life impacted is a victory for the community and a step toward a better tomorrow.</p>
+            </div>
+        </div>
+
+        <!-- Founder Spotlight -->
+        <section class="bg-slate-900 text-white rounded-3xl p-12 flex flex-col md:flex-row items-center gap-12">
+            <img src="YOUR_IMAGE_URL" alt="Alexandra Tochi Chibueze" class="w-64 h-64 object-cover rounded-2xl shadow-2xl">
+            <div>
+                <h2 class="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Founder & CEO</h2>
+                <h3 class="text-4xl font-extrabold mb-6">Alexandra Tochi Chibueze</h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    "BridgeHope was built on the premise that talent is universal, but opportunity is not. My mission is to bridge that divide through tactical, community-led initiatives that prioritize dignity and long-term economic independence."
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-300 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="#" class="text-slate-300 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#0b1626] text-slate-300 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+            
+            <!-- Column 1: Branding -->
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-6">BridgeHope</h2>
+                <p class="mb-6 leading-relaxed">Engineering sustainable solutions for rural development through transparency and tactical action.</p>
+                      <!-- Column 2 & 3: Navigation -->
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+    
+            <!-- Column 2 & 3: Navigation -->
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Organization</h4>
+                <ul class="space-y-4">
+                    <li><a href="/pages/about.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>About Us</a></li>
+                    <li><a href="/pages/transparency.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>Our Impact</a></li>
+                    <li><a href="/pages/Documentation.html" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-blue-600"></i>Strategic Goals</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>NEW HAVEN, ENUGU, Nigeria</li>
+                    <li class="flex items-center"><i class="fas fa-phone mt-1 mr-3 text-blue-500"></i>+234 7079 845 343</li>
+                    <li class="flex items-center"><i class="fas fa-envelope mt-1 mr-3 text-blue-500"></i>info@bridgehope.org</li>
+                </ul>
+            </div>
+    
+            <!-- Column 4: Newsletter -->
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
+                <p class="text-xs mb-4">Stay updated with our latest project deployments.</p>
+                <input type="email" placeholder="Your email address" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-lg mb-3 outline-none focus:border-blue-500 text-white">
+                <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition">Subscribe</button>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+            <p>&copy; 2026 BridgeHope Foundation. All Rights Reserved.</p>
+            
+            <!-- Added navigational links for professionalism -->
+         
         
-        <h1>Our Story.</h1>
-        
-        <p class="intro-text">
-            U-FIRST exists to stand in the gap. We are dedicated to ensuring that every individual, regardless of their background, has the resources and support they need to thrive and contribute to their community.
-        </p>
-
-        <section>
-            <h2>Our Heart</h2>
-            <p>
-                At the core of U-FIRST is a simple belief: change happens when people are empowered. We don't believe in quick fixes. We believe in walking alongside the people we serve—listening to their needs, honoring their dignity, and providing the tools for long-term growth.
+            <!-- Developer Credit with hover effect -->
+            <p class="developer-tag">
+                Engineered by <span class="text-blue-400 font-bold cursor-pointer hover:text-white transition-colors">Tech Nxxt</span>
             </p>
-        </section>
-
-        <section>
-            <h2>Our Impact</h2>
-            <p>
-                We focus on sustainable outreach. Whether it's through mentorship, educational support, or community welfare programs, our mission is to create a ripple effect of progress. We are building a future where no one is left behind because they lacked a helping hand.
-            </p>
-        </section>
-
-        <section>
-            <h2>Why We Do It</h2>
-            <p>
-                Every life impacted is a victory for the community. We work because we believe in the latent potential of every person. When you invest in U-FIRST, you aren't just donating to a cause; you are investing in the potential of human beings to build a better tomorrow for themselves and those around them.
-            </p>
-        </section>
-    </div>
+        </div>
+    </footer>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('bg-slate-900');
+            document.body.classList.toggle('text-white');
+            document.body.classList.toggle('bg-slate-50');
+        });
+    </script>
 </body>
 </html>

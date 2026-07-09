@@ -188,3 +188,195 @@ header {
     transform: scale(1.1);
     transition: 0.3s;
 }
+/* Ensure smooth interaction */
+button { transition: background 0.3s ease; }
+
+/* Add focus states for accessibility */
+button:focus { outline: 2px solid #3b82f6; }
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+    .text-xl { font-size: 1.1rem; }
+}
+/* Animation for content reveal */
+#prob, #goal, #objs {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Icon rotation transition */
+.fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+/* Better typography for list items */
+li i {
+    font-size: 0.9rem;
+}
+/* --- Popular Causes Section --- */
+
+/* Card Styling */
+.group {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Hover Effect: Tactical Lift */
+.group:hover {
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.group img {
+    filter: grayscale(20%);
+    transition: filter 0.4s ease;
+}
+
+.group:hover img {
+    filter: grayscale(0%);
+}
+
+/* Donation Button: High-Contrast "Engineering" look */
+.bg-slate-900 {
+    background-color: #0f172a;
+    transition: background-color 0.3s ease;
+}
+
+.bg-slate-900:hover {
+    background-color: #1d4ed8; /* Electric Blue on hover */
+}
+
+/* Typography adjustment for clarity */
+.text-slate-600 {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .grid-cols-1 {
+        gap: 2rem;
+    }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .md\:w-3\/5 { width: 100%; min-height: 400px; }
+    .md\:w-2\/5 { width: 100%; }
+}
+
+/* Form focus effect for better UX */
+input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 245, 0.2);
+}
+/* Modal Backdrop Overlay */
+#donationModal, #loadingOverlay {
+    backdrop-filter: blur(6px); /* Blurs the background content */
+    background: rgba(15, 23, 42, 0.75); /* Dark-engineered semi-transparent background */
+}
+
+/* Modal Window */
+#donationModal > div {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+    animation: modalPop 0.3s ease-out forwards;
+}
+
+/* Modal Pop Animation */
+@keyframes modalPop {
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Button Styling for Modal Actions */
+#donationModal a {
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+#donationModal a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    #donationModal > div {
+        margin: 0 20px;
+        padding: 24px;
+    }
+}
+/* Add depth to the image container */
+.relative img {
+    transition: transform 0.5s ease;
+}
+
+.relative:hover img {
+    transform: scale(1.02);
+}
+
+/* Ensure font readability on mobile */
+@media (max-width: 768px) {
+    .grid-cols-2 { gap: 8rem; }
+    .text-4xl { font-size: 2rem; }
+}
+/* Modal Animation */
+.modal-animate {
+    animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Bottom Bar Styling */
+.developer-tag {
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+/* Subtle hover effect for the developer span */
+.developer-tag span {
+    position: relative;
+}
+
+.developer-tag span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #60a5fa;
+    transition: width 0.3s ease;
+}
+
+.developer-tag:hover span::after {
+    width: 100%;
+}
+
+/* Ensure mobile layout is perfectly balanced */
+@media (max-width: 768px) {
+    .max-w-7xl {
+        text-align: center;
+        gap: 1rem;
+    }
+}

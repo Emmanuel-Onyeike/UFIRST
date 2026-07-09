@@ -68,3 +68,60 @@ setInterval(() => {
 // Hover interaction to stop/start
 const container = document.querySelector('.carousel-container');
 container.addEventListener('mouseenter', () => progress = progress); // Pause logic
+
+//// for the popular cause
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    content.classList.toggle('hidden');
+}
+/// addtional icons
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+    
+    // Toggle hidden state
+    content.classList.toggle('hidden');
+    
+    // Rotate icon
+    if (!content.classList.contains('hidden')) {
+        icon.style.transform = "rotate(180deg)";
+    } else {
+        icon.style.transform = "rotate(0deg)";
+    }
+}
+document.querySelector('button.uppercase').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Show Loading
+    document.getElementById('loadingOverlay').classList.remove('hidden');
+    
+    // Wait 6 seconds
+    setTimeout(() => {
+        document.getElementById('loadingOverlay').classList.add('hidden');
+        document.getElementById('donationModal').classList.remove('hidden');
+    }, 6000);
+});
+
+function closeModal() {
+    document.getElementById('donationModal').classList.add('hidden');
+}
+
+
+/// application modal
+// Listen for form submission
+document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the default page refresh
+    
+    // Display the success modal
+    const modal = document.getElementById('volunteerModal');
+    modal.classList.remove('hidden');
+});
+
+// Close the modal and reset the form
+function closeVolunteerModal() {
+    const modal = document.getElementById('volunteerModal');
+    modal.classList.add('hidden');
+    
+    // Clear the inputs for the next user
+    document.getElementById('volunteerForm').reset();
+}
