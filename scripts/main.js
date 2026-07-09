@@ -16,30 +16,12 @@ changeBg();
 
 // Modal Controls
 const menuBtn = document.getElementById('menuBtn');
-const closeBtn = document.getElementById('closeBtn');
 const mobileMenu = document.getElementById('mobileMenu');
+const closeBtn = document.getElementById('closeBtn');
 
-menuBtn.onclick = () => mobileMenu.style.width = "100%";
-closeBtn.onclick = () => mobileMenu.style.width = "0";
-
+menuBtn.addEventListener('click', () => { mobileMenu.style.width = "100%"; });
+closeBtn.addEventListener('click', () => { mobileMenu.style.width = "0"; });
 ///// ufirst misson and vision on the index page
-function openTab(evt, tabName) {
-    // Hide all contents
-    const contents = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < contents.length; i++) {
-        contents[i].style.display = "none";
-    }
-
-    // Remove active class from buttons
-    const btns = document.getElementsByClassName("tab-btn");
-    for (let i = 0; i < btns.length; i++) {
-        btns[i].classList.remove("active");
-    }
-
-    // Show current content and add active class
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-}
 
 
 //// for the scroll section 
@@ -124,4 +106,17 @@ function closeVolunteerModal() {
     
     // Clear the inputs for the next user
     document.getElementById('volunteerForm').reset();
+}
+function openTab(evt, tabName) {
+    // Hide all contents
+    const contents = document.querySelectorAll(".tab-content");
+    contents.forEach(content => content.classList.add("hidden"));
+
+    // Deactivate all buttons
+    const btns = document.querySelectorAll(".tab-btn");
+    btns.forEach(btn => btn.classList.remove("active"));
+
+    // Show current and activate button
+    document.getElementById(tabName).classList.remove("hidden");
+    evt.currentTarget.classList.add("active");
 }

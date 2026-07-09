@@ -11,61 +11,74 @@
 <body class="bg-white text-slate-900">
 
     <!-- Header -->
-    <header class="bg-slate-900 text-white p-6 sticky top-0 z-50 shadow-2xl border-b border-slate-700">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-3xl font-extrabold tracking-tighter italic">BRIDGE<span class="text-blue-500">HOPE</span></div>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">BRIDGE<span>HOPE</span></a>
             
-            <nav class="hidden md:flex space-x-8 items-center font-medium">
-                <a href="/pages/about.html" class="hover:text-blue-400 transition">About</a>
-                <a href="/pages/mission.html" class="hover:text-blue-400 transition">Mission</a>
-                <a href="/pages/ceo.html" class="hover:text-blue-400 transition">CEO</a>
-                <a href="/pages/partners.html" class="hover:text-blue-400 transition">Partners</a>
-                <a href="/pages/contact.html" class="hover:text-blue-400 transition">Contact</a>
+            <nav class="nav-links">
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/mission.html">Mission</a>
+                <a href="/pages/ceo.html">CEO</a>
+                <a href="/pages/partners.html">Partners</a>
+                <a href="/pages/contact.html">Contact</a>
                 <a href="/pages/donate.html" class="nav-donate-btn">Donate</a>
             </nav>
-
-            <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+    
+            <div id="menuBtn" class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
-
-    <!-- Slide-out Modal -->
-    <div id="mobileMenu" class="modal">
-        <button id="closeBtn" class="absolute top-6 right-6 text-4xl">&times;</button>
-        <div class="flex flex-col pt-32 px-10 space-y-8 text-2xl font-bold">
-            <a href="/pages/about.html" class="hover:text-blue-400">About</a>
-            <a href="/pages/mission.html" class="hover:text-blue-400">Mission & Vision</a>
-            <a href="/pages/ceo.html" class="hover:text-blue-400">CEO</a>
-            <a href="/pages/partners.html" class="hover:text-blue-400">Partners</a>
-            <a href="/pages/contact.html" class="hover:text-blue-400">Contact</a>
+    
+    <div id="mobileMenu" class="mobile-modal">
+        <div id="closeBtn" class="close-btn">&times;</div>
+        <div class="mobile-links">
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/mission.html">Mission</a>
+            <a href="/pages/ceo.html">CEO</a>
+            <a href="/pages/partners.html">Partners</a>
+            <a href="/pages/contact.html">Contact</a>
             <a href="/pages/donate.html" class="mobile-donate-btn">Donate Now</a>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section flex items-center justify-center text-center">
-        <div class="hero-overlay p-8 md:p-16 rounded-2xl border border-white/10 backdrop-blur-sm">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Empowering Humanity.</h1>
-            <p class="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto">Join a global movement dedicated to putting people first. Together, we can build a better tomorrow.</p>
-            <a href="#" class="hero-donate-btn">DONATE</a>
+   <!-- Hero Section -->
+<section id="hero" class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Empowering <br><span class="text-gradient">Humanity.</span></h1>
+        <p class="hero-desc">
+            Join a global movement dedicated to putting people first. 
+            Together, we are building sustainable foundations for a better tomorrow.
+        </p>
+        <div class="hero-actions">
+            <a href="/pages/donate.html" class="hero-donate-btn">DONATE NOW</a>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <section class="content-section">
-        <!-- Image Side -->
+<section class="content-section">
+    <!-- Image Side: With a subtle decorative frame -->
+    <div class="content-img-wrapper">
         <img src="/img/NGO IMG 3.jpeg" alt="Our Work" class="content-img">
-        
-        <!-- Text Side -->
-        <div class="content-text">
-            <h2 class="font-bold">Building a Better Future</h2>
-            <p>
-                At BRIDGEHOPE, we believe that sustainable change starts with direct action. 
-                We work tirelessly to empower communities by providing the resources, 
-                education, and infrastructure they need to thrive independently.
-            </p>
-            <a href="/pages/mission.html" class="nav-donate-btn">Read Our Mission</a>
+    </div>
+    
+    <!-- Text Side -->
+    <div class="content-text">
+        <span class="eyebrow">OUR COMMITMENT</span>
+        <h2>Building a Better Future</h2>
+        <p>
+            At BRIDGEHOPE, we believe that sustainable change starts with direct action. 
+            We work tirelessly to empower communities by providing the resources, 
+            education, and infrastructure they need to thrive independently.
+        </p>
+        <div class="btn-group">
+            <a href="/pages/mission.html" class="primary-btn">READ OUR MISSION</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="max-w-4xl mx-auto py-16 px-6">
         <!-- Tab Headers -->
@@ -76,25 +89,10 @@
     
         <!-- Tab Content -->
         <div id="about" class="tab-content py-8">
-            <h2 class="text-3xl font-bold mb-4 text-slate-900">Empowering Humanity First.</h2>
-            <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
-                <p>
-                    BRIDGEHOPE is a community driven organization dedicated to bridging the gap for the less privileged. 
-                    We provide structured humanitarian aid and sustainable relief programs that foster long term growth 
-                    rather than just temporary solutions.
-                </p>
-                <p>
-                    Our core philosophy is rooted in the belief that every individual deserves dignity, security, 
-                    and the opportunity to thrive. By operating at the grassroots level, we identify the most 
-                    pressing needs of our communities—ranging from food security and medical assistance to 
-                    essential education and vocational training.
-                </p>
-                <p>
-                    We don’t work in isolation. Ufirst operates through a network of local leaders, passionate 
-                    volunteers, and strategic partners who share our vision for a more equitable society. 
-                    Through transparency, efficiency, and a deep commitment to our cause, we ensure that 
-                    every resource is leveraged to create tangible, lasting impact.
-                </p>
+            <h2 class="section-title">Empowering Humanity First.</h2>
+            <div class="content-body">
+                <p>BRIDGEHOPE is a community-driven organization dedicated to bridging the gap for the less privileged. We provide structured humanitarian aid and sustainable relief programs that foster long-term growth.</p>
+                <p>Our core philosophy is rooted in the belief that every individual deserves dignity, security, and the opportunity to thrive.</p>
             </div>
         </div>
     
