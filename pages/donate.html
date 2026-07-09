@@ -3,72 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | U-FIRST</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <title>Donate | BridgeHope Foundation</title>
     <link rel="stylesheet" href="/styles/donate.css">
 </head>
-<body>
-    <div class="donate-page">
-        <!-- Navigation -->
-        <a href="/index.html" class="back-link">← RETURN TO CORE</a>
-        
-        <!-- Mission Header -->
-        <section class="mission-hero">
-            <h2>Mission Directive</h2>
-            <p>HELP US TO BRING HOPE FIRST TO THOSE IN NEED.</p>
-        </section>
+<body class="bg-slate-50">
+    <a href="/index.html" class="nav-back">
+        <span class="arrow">←</span> <span>RETURN TO HOME</span>
+    </a>
+ <!-- Section 1: Hero -->
+<section class="hero-section">
+    <h1 class="hero-title">Empower Change </h1>
+    <p class="hero-desc">
+        Distance is no barrier to impact. By donating today, you are fueling sustainable infrastructure and educational initiatives that bridge the gap for vulnerable communities. Your contribution—no matter the size—is a strategic investment in human dignity and long-term economic independence. 
+    </p>
+    <div class="impact-stats">
+        <div class="stat"><strong>100%</strong><span>Transparency</span></div>
+        <div class="stat"><strong>Direct</strong><span>Field Impact</span></div>
+        <div class="stat"><strong>Secure</strong><span>ADMIN CONTROL PAYMENT</span></div>
+    </div>
+</section>
 
-        <!-- Account Data Container -->
-        <section class="bank-grid">
-            <div class="bank-card">
-                <h3>Financial Credentials</h3>
-                <p><strong>NAME:</strong> U-FIRST COMMUNITY INITIATIVE</p>
-                <p><strong>NUMBER:</strong> 000-123-456-789</p>
-            </div>
-            <div class="bank-card">
-                <h3>Institution Details</h3>
-                <p><strong>BANK:</strong> TECH NXXT FINANCIAL SERVICES</p>
-                
-            </div>
-        </section>
+    <section class="terminal-container">
+        <div class="image-side"></div>
+        <div class="form-side">
+            <form id="donateForm" onsubmit="event.preventDefault(); showPaymentModal();">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="number" placeholder="Amount (₦)" required>
+                <button type="submit" class="submit-btn">PROCEED TO DONATE</button>
+            </form>
+        </div>
+    </section>
 
-        <!-- Receipt Upload Trigger -->
-        <div class="upload-section" id="uploadTrigger">
-            <h2 style="color: var(--accent-green)">INITIATE RECEIPT UPLOAD</h2>
-            <p>Provide transaction evidence for verification.</p>
-            <input type="file" id="fileInput" accept="image/*" hidden>
+    <!-- Modal 1: Payment Method -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 class="modal-title">SELECT PAYMENT METHOD</h3>
+            <button onclick="showAccountModal()" class="btn-primary">BANK TRANSFER</button>
+            <button class="btn-disabled" disabled>CARD TRANSFER (COMING SOON)</button>
+            <button class="btn-disabled" disabled>USSD (COMING SOON)</button>
         </div>
     </div>
 
-    <!-- Confirmation Modal -->
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content">
-            <div class="success-check">✔ CONFIRMED</div>
-            <p>Upload successful. Redirecting to verification channel...</p>
-            <a href="https://wa.me/234XXXXXXXXXX" id="waLink">CONNECT VIA WHATSAPP</a>
-            <p id="timer" style="margin-top: 20px; font-size: 0.7rem; color: #64748b;">AUTO-ROUTING IN 4s...</p>
+    <!-- Modal 2: Account Details -->
+    <div id="accountModal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 class="modal-title">BANK DETAILS</h3>
+            <div class="account-box">
+                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">Secure Giving Channels</h3>
+                <div class="detail-row"><span>Beneficiary:</span> <strong>Alexaz Care Foundation</strong></div>
+                <div class="detail-row"><span>Bank:</span> <strong>First Bank Of Nigeria</strong></div>
+                <div class="detail-row"><span>Account No:</span> <strong class="acc-num">2047851131</strong></div>
+                <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 1rem; line-height: 1.4;">
+                    *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
+                </p>
+            </div>
+            <button onclick="copyAcc()" class="btn-copy">COPY ACCOUNT NUMBER</button>
+            <button onclick="startVerification()" class="btn-proceed">I HAVE MADE PAYMENT</button>
+            <p id="timer" class="timer-text">CLOSING IN 05:00</p>
         </div>
     </div>
 
-    <script>
-        const modal = document.getElementById('modal');
-        const fileInput = document.getElementById('fileInput');
-        const uploadTrigger = document.getElementById('uploadTrigger');
+    <!-- Modal 3: Final Instructions -->
+    <div id="finalModal" class="modal-overlay">
+        <div class="modal-card">
+            <div id="loader" class="loader"></div>
+            <div id="instructionContent" style="display:none;">
+                <h3 class="modal-title">PAYMENT VERIFICATION</h3>
+                <p>Take a screenshot of your receipt and send it to our agent.</p>
+                <a href="https://wa.me/234XXXXXXXX" class="btn-whatsapp">WHATSAPP AGENT</a>
+                <a href="mailto:support@bridgehope.org" class="btn-email">EMAIL AGENT</a>
+            </div>
+        </div>
+    </div>
 
-        uploadTrigger.onclick = () => fileInput.click();
-        
-        fileInput.onchange = () => {
-            modal.style.display = 'flex';
-            let timeLeft = 4;
-            const timer = setInterval(() => {
-                timeLeft--;
-                document.getElementById('timer').innerText = `AUTO-ROUTING IN ${timeLeft}s...`;
-                if(timeLeft <= 0) {
-                    clearInterval(timer);
-                    window.location.href = 'https://wa.me/234XXXXXXXXXX';
-                }
-            }, 1000);
-        };
-    </script>
+    <script src="/scripts/donate.js"></script>
 </body>
 </html>

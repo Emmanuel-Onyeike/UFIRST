@@ -1,136 +1,186 @@
-/* donate.css - Full Industrial Architecture */
-
-/* Modal is hidden by default */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none; /* Hidden until triggered by JS */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+:root { 
+    --primary: #0d2138; 
+    --accent: #3b82f6; 
 }
 
-.modal-content {
-    background: #0a0f19;
-    padding: 3rem;
-    border: 1px solid var(--accent-green);
-    text-align: center;
-    max-width: 400px;
-    color: white;
+/* Base Reset & Typography */
+body { font-family: sans-serif; margin: 0; background-color: #f8fafc; }
+
+/* Hero Section */
+/* Enhanced Hero Section */
+.hero-section { 
+    padding: 6rem 2rem; 
+    text-align: center; 
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* Page Layout Components */
-.donate-page {
-    max-width: 900px;
-    margin: 3rem auto;
+/* Enhanced Title: Gradient text and better spacing */
+.hero-title { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem; 
+    line-height: 1.1;
+}
+
+/* Enhanced Description: Higher readability */
+.hero-desc { 
+    font-size: 1.25rem; 
+    color: #475569; 
+    max-width: 650px; 
+    margin: 0 auto 3rem auto; 
+    line-height: 1.7; 
+    font-weight: 400;
+}
+
+/* Enhancing the Stats to match the high-end UI */
+.impact-stats {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 0 2rem;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
 }
 
-.mission-hero {
-    background: linear-gradient(145deg, #0f172a, #0a0f19);
-    padding: 3rem;
-    border-left: 5px solid var(--accent-green);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.stat { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
-.mission-hero h2 { color: var(--accent-green); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
-.mission-hero p { font-size: 2rem; font-weight: 300; line-height: 1.4; color: #f8fafc; }
-
-.bank-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.stat strong { 
+    font-size: 1.75rem; 
+    color: var(--accent); 
+    margin-bottom: 0.25rem;
 }
 
-.bank-card {
-    background: #05080f;
-    padding: 2rem;
-    border: 1px solid rgba(34, 197, 94, 0.2);
+.stat span { 
+    font-size: 0.75rem; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    letter-spacing: 0.15em; 
+    color: #94a3b8; 
 }
 
-.bank-card h3 { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; }
-.bank-card p { font-size: 1.1rem; font-weight: bold; margin: 0.5rem 0; color: #fff; }
-
-.upload-section {
-    text-align: center;
-    padding: 4rem;
-    border: 2px dashed rgba(34, 197, 94, 0.3);
-    cursor: pointer;
-    transition: 0.3s;
-    background: rgba(34, 197, 94, 0.02);
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .impact-stats { gap: 1.5rem; }
+}
+/* Terminal Container with Background Image */
+.terminal-container {
+    display: flex; height: 500px; width: 90%; max-width: 1000px;
+    margin: 0 auto 4rem; border-radius: 2rem; overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.upload-section:hover { background: rgba(34, 197, 94, 0.05); border-color: var(--accent-green); }
-
-.success-check { color: var(--accent-green); font-size: 2rem; font-weight: 900; margin-bottom: 1rem; }
-
-#waLink { 
-    display: block; 
-    margin-top: 1.5rem; 
-    color: white; 
-    text-decoration: none; 
-    border: 1px solid var(--accent-green); 
-    padding: 1rem; 
-    font-weight: bold;
+/* Image Side: Using your provided image path */
+.image-side { 
+    flex: 1; 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/NGO\ img\ 9.jpg'); 
+    background-size: cover; 
+    background-position: center; 
 }
 
-#waLink:hover { background: var(--accent-green); color: black; }
-/* Base Industrial Grid */
-body {
-    /* Base background */
-    background-color: #020617;
-    
-    /* Dot Matrix Pattern */
-    background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
-    background-size: 40px 40px;
-    
-    /* Text and Layout */
-    color: #ffffff;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    
-    /* Ensure smooth transitions if you toggle modes */
-    transition: background-color 0.3s ease, background-image 0.3s ease;
+.form-side { flex: 0 0 400px; background: var(--primary); padding: 3rem; }
+
+/* Form Elements */
+input { width: 100%; padding: 1rem; background: transparent; border: 1px solid #334155; border-radius: 0.5rem; color: white; margin-bottom: 1rem; box-sizing: border-box; }
+.submit-btn { width: 100%; padding: 1rem; background: white; color: var(--primary); border-radius: 0.5rem; border: none; font-weight: 800; cursor: pointer; transition: 0.3s; }
+.submit-btn:hover { background: var(--accent); color: white; }
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(13, 33, 56, 0.95); display: none;
+    justify-content: center; align-items: center; z-index: 1000;
+}
+.modal-card {
+    background: var(--primary); border: 1px solid var(--accent);
+    padding: 2.5rem; border-radius: 1.5rem; width: 90%; max-width: 400px; color: white; text-align: center;
+}
+.modal-title { font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 2px; }
+.btn-primary { width: 100%; padding: 1rem; background: var(--accent); color: white; border-radius: 0.5rem; margin-bottom: 0.5rem; border: none; cursor: pointer; }
+.btn-disabled { width: 100%; padding: 1rem; background: #1e293b; color: #64748b; border-radius: 0.5rem; cursor: not-allowed; border: none; }
+.btn-proceed { width: 100%; padding: 1rem; background: white; color: var(--primary); border-radius: 0.5rem; margin-top: 1rem; border: none; font-weight: bold; cursor: pointer; }
+.btn-whatsapp { display: block; width: 100%; padding: 1rem; background: #25D366; color: white; text-decoration: none; border-radius: 0.5rem; margin-top: 1rem; }
+.btn-email { display: block; width: 100%; padding: 1rem; background: var(--accent); color: white; text-decoration: none; border-radius: 0.5rem; margin-top: 0.5rem; }
+
+/* Utility */
+.loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.timer-text { margin-top: 20px; font-size: 0.8rem; color: #64748b; }
+
+/* Responsive */
+@media (max-width: 900px) { .terminal-container { flex-direction: column; height: auto; } }
+/* Container for the account details */
+.account-box {
+    background: #0f172a; /* Slightly lighter than --primary for depth */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #334155;
+    margin: 2rem 0;
+    color: #f1f5f9;
 }
 
-/* Light Mode Override (Optional: Add this if you use the toggle) */
-body.light-mode {
-    background-color: #ffffff;
-    background-image: radial-gradient(circle at 2px 2px, #cbd5e1 1px, transparent 0);
-    color: #0f172a;
-}
-body.light-mode .bank-card, 
-body.light-mode .partner-card,
-body.light-mode .modal-content {
-    background-color: #f1f5f9;
-    border: 1px solid #e2e8f0;
-}
-
-body.light-mode h1, body.light-mode h2, body.light-mode h3 { color: #000000; }
-body.light-mode p { color: #475569; }
-
-/* The Toggle Button Styling */
-#theme-toggle {
-    background: transparent;
-    border: 1px solid var(--accent-green);
-    color: var(--accent-green);
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-    cursor: pointer;
+.account-box h3 {
+    font-size: 0.9rem;
     text-transform: uppercase;
-    margin-right: 1rem;
-    transition: 0.3s;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 0.75rem;
 }
 
-#theme-toggle:hover {
-    background: var(--accent-green);
-    color: white;
+/* Row styling for clarity */
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+}
+
+.detail-row span {
+    color: #94a3b8; /* Muted label color */
+}
+
+.detail-row strong {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Highlight the account number specifically */
+.acc-num {
+    color: #ffffff;
+    font-family: 'Courier New', monospace; /* Monospaced font for precision */
+    font-size: 1.1rem;
+}
+.nav-back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #64748b;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.nav-back:hover {
+    color: var(--accent);
+    transform: translateX(-5px);
+}
+
+.nav-back .arrow {
+    font-size: 1.2rem;
 }
