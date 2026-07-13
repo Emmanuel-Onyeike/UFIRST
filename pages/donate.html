@@ -4,32 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate | BridgeHope Foundation</title>
-    <link rel="stylesheet" href="/styles/donate.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+       .modal-overlay.active { display: flex; }
+       .modal-card {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+       .nav-back {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            color: #334155;
+            font-weight: 600;
+            display: flex;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+       .nav-back:hover { color: #0ea5e9; }
+       .hero-section {
+            text-align: center;
+            padding: 6rem 1rem 4rem;
+            background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+        }
+       .hero-title { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; }
+       .hero-desc { max-width: 700px; margin: 0 auto 2rem; color: #475569; line-height: 1.7; }
+       .impact-stats { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+       .stat { text-align: center; }
+       .stat strong { display: block; font-size: 1.5rem; color: #0ea5e9; }
+       .stat span { font-size: 0.875rem; color: #64748b; }
+       .terminal-container { display: flex; max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; gap: 2rem; }
+       .image-side { flex: 1; background: url('https://via.placeholder.com/500x600') center/cover; border-radius: 1rem; min-height: 400px; }
+       .form-side { flex: 1; }
+       .form-side input { width: 100%; padding: 0.875rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; background: white; }
+       .submit-btn { width: 100%; padding: 1rem; background: #0ea5e9; color: white; font-weight: 700; border-radius: 0.5rem; border: none; cursor: pointer; }
+       .submit-btn:hover { background: #0284c7; }
+       .btn-primary { width: 100%; padding: 0.875rem; background: #0ea5e9; color: white; font-weight: 600; border-radius: 0.5rem; border: none; margin-bottom: 0.75rem; cursor: pointer; }
+       .btn-disabled { width: 100%; padding: 0.875rem; background: #334155; color: #94a3b8; font-weight: 600; border-radius: 0.5rem; border: none; margin-bottom: 0.75rem; cursor: not-allowed; }
+       .btn-whatsapp,.btn-email { display: block; text-align: center; padding: 0.875rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; margin-bottom: 0.75rem; }
+       .btn-whatsapp { background: #25D366; color: white; }
+       .btn-email { background: #64748b; color: white; }
+       .loader { border: 4px solid #334155; border-top: 4px solid #0ea5e9; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 2rem auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @media (max-width: 768px) {.terminal-container { flex-direction: column; }.hero-title { font-size: 2rem; } }
+    </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50 relative">
     <a href="/index.html" class="nav-back">
         <span class="arrow">←</span> <span>RETURN TO HOME</span>
     </a>
- <!-- Section 1: Hero -->
-<section class="hero-section">
-    <h1 class="hero-title">Empower Change </h1>
-    <p class="hero-desc">
-        Distance is no barrier to impact. By donating today, you are fueling sustainable infrastructure and educational initiatives that bridge the gap for vulnerable communities. Your contribution—no matter the size—is a strategic investment in human dignity and long-term economic independence. 
-    </p>
-    <div class="impact-stats">
-        <div class="stat"><strong>100%</strong><span>Transparency</span></div>
-        <div class="stat"><strong>Direct</strong><span>Field Impact</span></div>
-        <div class="stat"><strong>Secure</strong><span>ADMIN CONTROL PAYMENT</span></div>
-    </div>
-</section>
+
+    <!-- Section 1: Hero -->
+    <section class="hero-section">
+        <h1 class="hero-title">Empower Change</h1>
+        <p class="hero-desc">
+            Distance is no barrier to impact. By donating today, you are fueling sustainable infrastructure and educational initiatives that bridge the gap for vulnerable communities. Your contribution—no matter the size—is a strategic investment in human dignity and long-term economic independence.
+        </p>
+        <div class="impact-stats">
+            <div class="stat"><strong>100%</strong><span>Transparency</span></div>
+            <div class="stat"><strong>Direct</strong><span>Field Impact</span></div>
+            <div class="stat"><strong>Secure</strong><span>ADMIN CONTROL PAYMENT</span></div>
+        </div>
+    </section>
 
     <section class="terminal-container">
         <div class="image-side"></div>
         <div class="form-side">
-            <form id="donateForm" onsubmit="event.preventDefault(); showPaymentModal();">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="number" placeholder="Amount (₦)" required>
+            <form id="donateForm">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="number" id="amount" placeholder="Amount (₦)" required>
                 <button type="submit" class="submit-btn">PROCEED TO DONATE</button>
             </form>
         </div>
@@ -38,129 +97,147 @@
     <!-- Modal 1: Payment Method -->
     <div id="paymentModal" class="modal-overlay">
         <div class="modal-card">
-            <h3 class="modal-title">SELECT PAYMENT METHOD</h3>
+            <h3 class="text-xl font-bold text-center text-white mb-6">SELECT PAYMENT METHOD</h3>
             <button onclick="showAccountModal()" class="btn-primary">BANK TRANSFER</button>
             <button class="btn-disabled" disabled>CARD TRANSFER (COMING SOON)</button>
             <button class="btn-disabled" disabled>USSD (COMING SOON)</button>
+            <button onclick="closeModal('paymentModal')" class="w-full mt-2 text-slate-400 text-sm">Cancel</button>
         </div>
     </div>
 
-    <div id="accountModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 overflow-y-auto">
+    <!-- Modal 2: Account Details -->
+    <div id="accountModal" class="modal-overlay">
+        <div class="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-slate-900 p-6 shadow-2xl">
+            <h3 class="text-2xl font-bold text-center text-white mb-6">BANK DETAILS</h3>
+            <div class="rounded-xl border-slate-700 bg-slate-800 p-5">
+                <h3 class="mb-5 border-b border-slate-700 pb-3 text-lg font-semibold text-white">Secure Giving Channels</h3>
 
-    <div class="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-slate-900 p-6 shadow-2xl">
-
-        <h3 class="text-2xl font-bold text-center text-white mb-6">
-            BANK DETAILS
-        </h3>
-
-        <div class="rounded-xl border border-slate-700 bg-slate-800 p-5">
-
-            <h3 class="mb-5 border-b border-slate-700 pb-3 text-lg font-semibold text-white">
-                Secure Giving Channels
-            </h3>
-
-            <!-- NGN ACCOUNT -->
-            <div class="rounded-xl border border-slate-700 bg-slate-900 p-4 mb-5">
-
-                <h4 class="mb-4 text-lg font-semibold text-sky-400">
-                    🇳🇬 NGN ACCOUNT
-                </h4>
-
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Beneficiary</span>
-                    <strong class="text-right text-white">
-                        BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT
-                    </strong>
+                <!-- NGN ACCOUNT -->
+                <div class="rounded-xl border-slate-700 bg-slate-900 p-4 mb-5">
+                    <h4 class="mb-4 text-lg font-semibold text-sky-400">🇳🇬 NGN ACCOUNT</h4>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Beneficiary</span>
+                        <strong class="text-right text-white text-xs">BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                    </div>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Bank</span>
+                        <strong class="text-right text-white">Zenith Bank PLC</strong>
+                    </div>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Account No</span>
+                        <strong id="ngnAcc" class="text-right text-lg tracking-wider text-white">1312579424</strong>
+                    </div>
                 </div>
 
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Bank</span>
-                    <strong class="text-right text-white">
-                       Zenith Bank PLC
-                    </strong>
+                <!-- USD ACCOUNT -->
+                <div class="rounded-xl border-slate-700 bg-slate-900 p-4">
+                    <h4 class="mb-4 text-lg font-semibold text-green-400">🇺🇸 USD ACCOUNT</h4>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Beneficiary</span>
+                        <strong class="text-right text-white text-xs">BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                    </div>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Bank</span>
+                        <strong class="text-right text-white">##</strong>
+                    </div>
+                    <div class="flex justify-between gap-4 py-2 text-sm">
+                        <span class="text-slate-400">Account No</span>
+                        <strong id="usdAcc" class="text-right text-lg tracking-wider text-white">5076119041</strong>
+                    </div>
                 </div>
 
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Account No</span>
-                    <strong id="ngnAcc" class="break-all text-right text-lg tracking-wider text-white">
-                        1312579424
-                    </strong>
-                </div>
-
+                <p class="mt-5 text-xs leading-5 text-slate-400">
+                    *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
+                </p>
             </div>
 
-            <!-- USD ACCOUNT -->
-            <div class="rounded-xl border border-slate-700 bg-slate-900 p-4">
-
-                <h4 class="mb-4 text-lg font-semibold text-green-400">
-                    🇺🇸 USD ACCOUNT
-                </h4>
-
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Beneficiary</span>
-                    <strong class="text-right text-white">
-                        BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT
-                    </strong>
-                </div>
-
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Bank</span>
-                    <strong class="text-right text-white">
-                        ##
-                    </strong>
-                </div>
-
-                <div class="flex justify-between gap-4 py-2 text-sm">
-                    <span class="text-slate-400">Account No</span>
-                    <strong id="usdAcc" class="break-all text-right text-lg tracking-wider text-white">
-                        5076119041
-                    </strong>
-                </div>
-
+            <div class="mt-6 space-y-3">
+                <button onclick="copyAcc()" class="w-full rounded-xl bg-sky-500 py-3 font-semibold text-white hover:bg-sky-600">COPY ACCOUNT DETAILS</button>
+                <button onclick="startVerification()" class="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white hover:bg-emerald-600">I HAVE MADE PAYMENT</button>
+                <button onclick="closeModal('accountModal')" class="w-full text-slate-400 text-sm">Back</button>
             </div>
-
-            <p class="mt-5 text-xs leading-5 text-slate-400">
-                *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
-            </p>
-
+            <p id="timer" class="mt-5 text-center text-sm font-medium text-slate-400">CLOSING IN 05:00</p>
         </div>
-
-        <!-- Buttons -->
-        <div class="mt-6 space-y-3">
-
-            <button onclick="copyAcc()"
-                class="w-full rounded-xl bg-sky-500 py-3 font-semibold text-white transition hover:bg-sky-600">
-                COPY ACCOUNT DETAILS
-            </button>
-
-            <button onclick="startVerification()"
-                class="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white transition hover:bg-emerald-600">
-                I HAVE MADE PAYMENT
-            </button>
-
-        </div>
-
-        <p id="timer" class="mt-5 text-center text-sm font-medium text-slate-400">
-            CLOSING IN 05:00
-        </p>
-
     </div>
 
-</div>
-    
     <!-- Modal 3: Final Instructions -->
     <div id="finalModal" class="modal-overlay">
         <div class="modal-card">
             <div id="loader" class="loader"></div>
             <div id="instructionContent" style="display:none;">
-                <h3 class="modal-title">PAYMENT VERIFICATION</h3>
-                <p>Take a screenshot of your receipt and send it to our agent.</p>
-                <a href="https://wa.me/234XXXXXXXX" class="btn-whatsapp">WHATSAPP AGENT</a>
+                <h3 class="text-xl font-bold text-center text-white mb-4">PAYMENT VERIFICATION</h3>
+                <p class="text-slate-300 text-center mb-4">Take a screenshot of your receipt and send it to our agent.</p>
+                <a href="https://wa.me/234XXXXXXXX" target="_blank" class="btn-whatsapp">WHATSAPP AGENT</a>
                 <a href="mailto:support@bridgehope.org" class="btn-email">EMAIL AGENT</a>
+                <button onclick="closeModal('finalModal')" class="w-full mt-2 text-slate-400 text-sm">Close</button>
             </div>
         </div>
     </div>
 
-    <script src="/scripts/donate.js"></script>
+    <script>
+        let countdown;
+        let timeLeft = 300; // 5 minutes
+
+        document.getElementById('donateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showPaymentModal();
+        });
+
+        function showPaymentModal() {
+            document.getElementById('paymentModal').classList.add('active');
+        }
+
+        function showAccountModal() {
+            closeModal('paymentModal');
+            document.getElementById('accountModal').classList.add('active');
+            startTimer();
+        }
+
+        function startVerification() {
+            closeModal('accountModal');
+            document.getElementById('finalModal').classList.add('active');
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('instructionContent').style.display = 'block';
+            }, 2000);
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            clearInterval(countdown);
+            timeLeft = 300;
+        }
+
+        function copyAcc() {
+            const ngn = document.getElementById('ngnAcc').innerText;
+            const usd = document.getElementById('usdAcc').innerText;
+            const text = `NGN Account: ${ngn}\nUSD Account: ${usd}\nBeneficiary: BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT\nBank: Zenith Bank PLC`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Account details copied!');
+            });
+        }
+
+        function startTimer() {
+            clearInterval(countdown);
+            timeLeft = 300;
+            countdown = setInterval(() => {
+                timeLeft--;
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                document.getElementById('timer').innerText = `CLOSING IN ${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+                if(timeLeft <= 0) {
+                    clearInterval(countdown);
+                    closeModal('accountModal');
+                }
+            }, 1000);
+        }
+
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) closeModal(modal.id);
+            });
+        });
+    </script>
 </body>
 </html>
