@@ -45,76 +45,109 @@
         </div>
     </div>
 
-    <!-- Modal 2: Account Details -->
-    <div id="accountModal" class="modal-overlay">
-    <div class="modal-card">
-        <h3 class="modal-title">BANK DETAILS</h3>
+    <div id="accountModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 overflow-y-auto">
 
-        <div class="account-box">
-            <h3 style="margin-bottom:1rem;border-bottom:1px solid #334155;padding-bottom:0.5rem;">
+    <div class="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-slate-900 p-6 shadow-2xl">
+
+        <h3 class="text-2xl font-bold text-center text-white mb-6">
+            BANK DETAILS
+        </h3>
+
+        <div class="rounded-xl border border-slate-700 bg-slate-800 p-5">
+
+            <h3 class="mb-5 border-b border-slate-700 pb-3 text-lg font-semibold text-white">
                 Secure Giving Channels
             </h3>
 
-            <!-- NGN Account -->
-            <div style="margin-bottom:1.5rem;">
-                <h4 style="color:#38bdf8;margin-bottom:0.7rem;">NGN ACCOUNT</h4>
+            <!-- NGN ACCOUNT -->
+            <div class="rounded-xl border border-slate-700 bg-slate-900 p-4 mb-5">
 
-                <div class="detail-row">
-                    <span>Beneficiary:</span>
-                    <strong>BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                <h4 class="mb-4 text-lg font-semibold text-sky-400">
+                    🇳🇬 NGN ACCOUNT
+                </h4>
+
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Beneficiary</span>
+                    <strong class="text-right text-white">
+                        BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT
+                    </strong>
                 </div>
 
-                <div class="detail-row">
-                    <span>Bank:</span>
-                    <strong>Coming Soon</strong>
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Bank</span>
+                    <strong class="text-right text-white">
+                       Zenith Bank PLC
+                    </strong>
                 </div>
 
-                <div class="detail-row">
-                    <span>Account No:</span>
-                    <strong class="acc-num" id="ngnAcc">1312579424</strong>
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Account No</span>
+                    <strong id="ngnAcc" class="break-all text-right text-lg tracking-wider text-white">
+                        1312579424
+                    </strong>
                 </div>
+
             </div>
 
-            <hr style="border:none;border-top:1px solid #334155;margin:1rem 0;">
+            <!-- USD ACCOUNT -->
+            <div class="rounded-xl border border-slate-700 bg-slate-900 p-4">
 
-            <!-- USD Account -->
-            <div>
-                <h4 style="color:#38bdf8;margin-bottom:0.7rem;">USD ACCOUNT</h4>
+                <h4 class="mb-4 text-lg font-semibold text-green-400">
+                    🇺🇸 USD ACCOUNT
+                </h4>
 
-                <div class="detail-row">
-                    <span>Beneficiary:</span>
-                    <strong>BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Beneficiary</span>
+                    <strong class="text-right text-white">
+                        BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT
+                    </strong>
                 </div>
 
-                <div class="detail-row">
-                    <span>Bank:</span>
-                    <strong>Coming Soon</strong>
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Bank</span>
+                    <strong class="text-right text-white">
+                        ##
+                    </strong>
                 </div>
 
-                <div class="detail-row">
-                    <span>Account No:</span>
-                    <strong class="acc-num" id="usdAcc">5076119041</strong>
+                <div class="flex justify-between gap-4 py-2 text-sm">
+                    <span class="text-slate-400">Account No</span>
+                    <strong id="usdAcc" class="break-all text-right text-lg tracking-wider text-white">
+                        5076119041
+                    </strong>
                 </div>
+
             </div>
 
-            <p style="font-size:0.7rem;color:#94a3b8;margin-top:1rem;line-height:1.4;">
+            <p class="mt-5 text-xs leading-5 text-slate-400">
                 *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
             </p>
+
         </div>
 
-        <button onclick="copyAcc()" class="btn-copy">
-            COPY ACCOUNT DETAILS
-        </button>
+        <!-- Buttons -->
+        <div class="mt-6 space-y-3">
 
-        <button onclick="startVerification()" class="btn-proceed">
-            I HAVE MADE PAYMENT
-        </button>
+            <button onclick="copyAcc()"
+                class="w-full rounded-xl bg-sky-500 py-3 font-semibold text-white transition hover:bg-sky-600">
+                COPY ACCOUNT DETAILS
+            </button>
 
-        <p id="timer" class="timer-text">
+            <button onclick="startVerification()"
+                class="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white transition hover:bg-emerald-600">
+                I HAVE MADE PAYMENT
+            </button>
+
+        </div>
+
+        <p id="timer" class="mt-5 text-center text-sm font-medium text-slate-400">
             CLOSING IN 05:00
         </p>
+
     </div>
+
 </div>
+    
     <!-- Modal 3: Final Instructions -->
     <div id="finalModal" class="modal-overlay">
         <div class="modal-card">
