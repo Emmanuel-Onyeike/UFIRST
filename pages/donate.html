@@ -47,23 +47,74 @@
 
     <!-- Modal 2: Account Details -->
     <div id="accountModal" class="modal-overlay">
-        <div class="modal-card">
-            <h3 class="modal-title">BANK DETAILS</h3>
-            <div class="account-box">
-                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">Secure Giving Channels</h3>
-                <div class="detail-row"><span>Beneficiary:</span> <strong>Alexaz Care Foundation</strong></div>
-                <div class="detail-row"><span>Bank:</span> <strong>First Bank Of Nigeria</strong></div>
-                <div class="detail-row"><span>Account No:</span> <strong class="acc-num">2047851131</strong></div>
-                <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 1rem; line-height: 1.4;">
-                    *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
-                </p>
-            </div>
-            <button onclick="copyAcc()" class="btn-copy">COPY ACCOUNT NUMBER</button>
-            <button onclick="startVerification()" class="btn-proceed">I HAVE MADE PAYMENT</button>
-            <p id="timer" class="timer-text">CLOSING IN 05:00</p>
-        </div>
-    </div>
+    <div class="modal-card">
+        <h3 class="modal-title">BANK DETAILS</h3>
 
+        <div class="account-box">
+            <h3 style="margin-bottom:1rem;border-bottom:1px solid #334155;padding-bottom:0.5rem;">
+                Secure Giving Channels
+            </h3>
+
+            <!-- NGN Account -->
+            <div style="margin-bottom:1.5rem;">
+                <h4 style="color:#38bdf8;margin-bottom:0.7rem;">NGN ACCOUNT</h4>
+
+                <div class="detail-row">
+                    <span>Beneficiary:</span>
+                    <strong>BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Bank:</span>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Account No:</span>
+                    <strong class="acc-num" id="ngnAcc">1312579424</strong>
+                </div>
+            </div>
+
+            <hr style="border:none;border-top:1px solid #334155;margin:1rem 0;">
+
+            <!-- USD Account -->
+            <div>
+                <h4 style="color:#38bdf8;margin-bottom:0.7rem;">USD ACCOUNT</h4>
+
+                <div class="detail-row">
+                    <span>Beneficiary:</span>
+                    <strong>BRIDGEHOPE FOUNDATION FOR COMMUNITY DEVELOPMENT</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Bank:</span>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Account No:</span>
+                    <strong class="acc-num" id="usdAcc">5076119041</strong>
+                </div>
+            </div>
+
+            <p style="font-size:0.7rem;color:#94a3b8;margin-top:1rem;line-height:1.4;">
+                *All transactions are manually verified by our team. Please ensure you upload your receipt immediately after transfer to trigger the verification protocol.
+            </p>
+        </div>
+
+        <button onclick="copyAcc()" class="btn-copy">
+            COPY ACCOUNT DETAILS
+        </button>
+
+        <button onclick="startVerification()" class="btn-proceed">
+            I HAVE MADE PAYMENT
+        </button>
+
+        <p id="timer" class="timer-text">
+            CLOSING IN 05:00
+        </p>
+    </div>
+</div>
     <!-- Modal 3: Final Instructions -->
     <div id="finalModal" class="modal-overlay">
         <div class="modal-card">
